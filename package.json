@@ -1,12 +1,19 @@
 {
   "name": "vue-vben-admin-fork",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "vue"
+  ],
+  "author": {
+    "name": "xiaoyuan-zs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@9.10.0"
 }
