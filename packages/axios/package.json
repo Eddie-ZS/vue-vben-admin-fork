@@ -3,17 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "keywords": [
-    "vue"
-  ],
   "author": {
     "name": "xiaoyuan-zs"
   },
   "scripts": {
-  },
-  "engines": {
-    "node": ">=20",
-    "pnpm": ">=9"
-  },
-  "packageManager": "pnpm@9.10.0"
+  }
 }
