@@ -9,11 +9,14 @@
   "author": {
     "name": "xiaoyuan-zs"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "engines": {
     "node": ">=20",
     "pnpm": ">=9"
   },
-  "packageManager": "pnpm@9.10.0"
+  "packageManager": "pnpm@9.10.0",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "turbo": "^2.1.2"
+  }
 }
