@@ -9,7 +9,9 @@
   "author": {
     "name": "xiaoyuan-zs"
   },
-  "scripts": {},
+  "scripts": {
+    "dev": "turbo run dev"
+  },
   "engines": {
     "node": ">=20",
     "pnpm": ">=9"
