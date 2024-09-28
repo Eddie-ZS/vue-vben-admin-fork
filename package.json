@@ -10,7 +10,8 @@
     "name": "xiaoyuan-zs"
   },
   "scripts": {
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "build": "turbo run build"
   },
   "engines": {
     "node": ">=20",
