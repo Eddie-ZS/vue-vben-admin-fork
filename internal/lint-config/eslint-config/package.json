@@ -1,0 +1,11 @@
+{
+  "name": "@vben/eslint-config",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "xiaoyuan-zs"
+  },
+  "scripts": {
+  }
+}
