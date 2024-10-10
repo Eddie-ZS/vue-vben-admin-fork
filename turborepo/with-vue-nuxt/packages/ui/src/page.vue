@@ -29,6 +29,7 @@ const LINKS = [
 const props = defineProps<{
   appName: string;
 }>();
+
 </script>
 
 <template>
