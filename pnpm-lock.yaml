@@ -21,29 +21,37 @@ importers:
         specifier: ^2.1.2
         version: 2.1.2
 
-  apps/element: {}
+  apps/web-element:
+    dependencies:
+      '@vben/axios':
+        specifier: workspace:*
+        version: link:../../packages/axios
 
-  apps/navie: {}
+  apps/web-navie:
+    dependencies:
+      '@vben/axios':
+        specifier: workspace:*
+        version: link:../../packages/axios
 
-  apps/primevue: {}
+  apps/web-primevue:
+    dependencies:
+      '@vben/axios':
+        specifier: workspace:*
+        version: link:../../packages/axios
 
-  apps/vexip: {}
-
-  apps/web-element: {}
-
-  apps/web-navie: {}
-
-  apps/web-primevue: {}
-
-  apps/web-vexip: {}
-
-  internal/tsconfig: {}
-
-  internal/vite-config: {}
+  apps/web-vexip:
+    dependencies:
+      '@vben/axios':
+        specifier: workspace:*
+        version: link:../../packages/axios
 
   packages/@core: {}
 
-  packages/axios: {}
+  packages/axios:
+    dependencies:
+      '@vben/core':
+        specifier: workspace:*
+        version: link:../@core
 
 packages:
 
