@@ -1,8 +1,0 @@
-{
-    "compilerOptions": {
-        // 声明文件类型是否开启
-        "declaration": false,
-        // 声明文件输出位置
-        // "declarationDir": "./types",
-    }
-}
