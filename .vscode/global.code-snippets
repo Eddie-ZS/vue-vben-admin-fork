@@ -1,0 +1,41 @@
+{
+  "import": {
+    "scope": "javascript,typescript",
+    "prefix": "im",
+    "body": [
+      "import { $2 } from '$1';"
+    ],
+    "description": "import module"
+  },
+  "export-all": {
+    "scope": "javascript,typescript",
+    "prefix": "ex",
+    "body": ["export * from '$1';"],
+    "description": "Export a module",
+  },
+  "vue-setup":{
+    "scope": "vue",
+    "prefix": "vue-setup",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "$1",
+      "</script>",
+      "",
+      "<template>",
+      "  <div>",
+      "    <slot/>",
+      "  </div>",
+      "</template>",
+    ]
+  },
+  "vue-computed": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "com",
+    "body": ["computed(() => { $1 })"],
+  },
+  "vue-watch": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "wa",
+    "body": ["watch(() => { $1 })"],
+  },
+}
