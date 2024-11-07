@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Web Application TsConfig",
+  "extends": "./web-pkg.json",
+  "compilerOptions": {
+    "types": ["vite/client"]
+  }
+}
