@@ -27,7 +27,7 @@
     "editor.stickyTabStops": true, // 在缩进上移动光标时2个空格一组来移动，就仿佛它们是制表符(\t)一样
     "editor.wordBasedSuggestions": "off", // 关闭基于文件中单词来联想的功能（语言自带的联想就够了，开了这个会导致用vscode写MarkDown时的中文引号异常联想）
     "editor.linkedEditing": true, // html标签自动重命名
-    // "editor.fontFamily": "'Jetbrains Mono', '思源黑体'",//字体设置，个人喜欢Jetbrains Mono作英文字体，思源黑体作中文字体
+    // "editor.fontFamily": "Consolas, 'Courier New', monospace",//字体设置，个人喜欢Jetbrains Mono作英文字体，思源黑体作中文字体
     "editor.fontLigatures": true,//启用字体连字
     "editor.detectIndentation": false,//不基于文件内容选择缩进用制表符还是空格
     "editor.largeFileOptimizations": false, // 禁用大文件优化，避免编辑器卡顿

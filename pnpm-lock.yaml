@@ -20,6 +20,12 @@ importers:
       '@types/node':
         specifier: ^22.9.0
         version: 22.9.0
+      '@vbird/eslint-config':
+        specifier: workspace:*
+        version: link:internal/lint-configs/eslint-config
+      '@vbird/tsconfig':
+        specifier: workspace:*
+        version: link:internal/tsconfig
       '@vitejs/plugin-vue':
         specifier: ^5.1.4
         version: 5.1.4(vite@5.4.10(@types/node@22.9.0))(vue@3.5.12(typescript@5.6.3))
@@ -74,31 +80,11 @@ importers:
 
   apps/web-element: {}
 
-  apps/web-navie:
-    dependencies:
-      '@vben/axios':
-        specifier: workspace:*
-        version: link:../../packages/axios
+  internal/lint-configs/eslint-config: {}
 
-  apps/web-primevue:
-    dependencies:
-      '@vben/axios':
-        specifier: workspace:*
-        version: link:../../packages/axios
-
-  apps/web-vexip:
-    dependencies:
-      '@vben/axios':
-        specifier: workspace:*
-        version: link:../../packages/axios
+  internal/tsconfig: {}
 
   packages/@core: {}
-
-  packages/axios:
-    dependencies:
-      '@vben/core':
-        specifier: workspace:*
-        version: link:../@core
 
 packages:
 

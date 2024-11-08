@@ -10,7 +10,5 @@
     "node.json",
     "web-app.json",
     "web-pkg.json"
-  ],
-  "dependencies": {
-  }
+  ]
 }
