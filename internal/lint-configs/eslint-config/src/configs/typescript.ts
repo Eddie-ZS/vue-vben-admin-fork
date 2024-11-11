@@ -1,18 +1,16 @@
-import type { Linter } from 'eslint'
-import { inferOpDefault } from '../util'
+import { inferOpDefault } from "../util";
 
-export async function typescript(): Promise<Linter.Config[]> {
-
+export async function typescript() {
   const [tsEslint] = await Promise.all([
-    inferOpDefault(import('typescript-eslint'))
-  ] as const)
+    inferOpDefault(import("typescript-eslint")),
+  ] as const);
 
-  return [
+  return tsEslint.config(
+    //
+    ...tsEslint.configs.recommended,
     {
-      files: ['**/*.?([cm])[jt]s?(x)'],
-      rules: {
-
-      }
+      files: ["**/*.?([cm])[jt]s?(x)"],
+      rules: {},
     }
-  ]
+  );
 }
