@@ -14,7 +14,13 @@ type FlatConfigPromise =
   | Promise<FlatConfig[]>;
 
 
-  console.log('ts', typescript());
+console.log('ts', typescript());
+
+/**
+ * https://typescript-eslint.io/users/configs/
+ * https://eslint.nodejs.cn/docs/latest/use/configure/configuration-files#typescript-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
+ * https://turbo.build/repo/docs/reference/configuration#dependson
+ */
 
   /**
    *
