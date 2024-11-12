@@ -1,2 +1,2 @@
-import { defineConfig } from '@vbird/eslint-config'
-export default defineConfig()
+import { defineConfig } from '@vbird/eslint-config';
+export default defineConfig();
