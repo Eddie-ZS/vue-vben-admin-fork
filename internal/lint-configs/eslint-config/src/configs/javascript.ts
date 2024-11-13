@@ -50,13 +50,6 @@ export async function javascript(): Promise<Linter.Config[]> {
         'no-empty-character-class': 'error',
         'no-empty-function': 'off',
         'no-empty-pattern': 'error',
-
-        'prettier/prettier': [
-          'error',
-          {
-            endOfLine: 'auto',
-          },
-        ],
         // 'no-restricted-globals': [
         //   'error',
         // ],
