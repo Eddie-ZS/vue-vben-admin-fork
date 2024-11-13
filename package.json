@@ -27,6 +27,7 @@
     "@types/node": "^22.9.0",
     "@vbird/eslint-config": "workspace:*",
     "@vbird/prettier-config": "workspace:*",
+    "@vbird/stylelint-config": "workspace:*",
     "@vbird/tsconfig": "workspace:*",
     "@vitejs/plugin-vue": "^5.1.5",
     "@vitejs/plugin-vue-jsx": "^4.1.0",

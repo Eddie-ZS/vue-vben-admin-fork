@@ -26,6 +26,9 @@ importers:
       '@vbird/prettier-config':
         specifier: workspace:*
         version: link:internal/lint-configs/prettier-config
+      '@vbird/stylelint-config':
+        specifier: workspace:*
+        version: link:internal/lint-configs/stylelint-config
       '@vbird/tsconfig':
         specifier: workspace:*
         version: link:internal/tsconfig
@@ -115,6 +118,8 @@ importers:
       prettier:
         specifier: 3.3.3
         version: 3.3.3
+
+  internal/lint-configs/stylelint-config: {}
 
   internal/tsconfig: {}
 
