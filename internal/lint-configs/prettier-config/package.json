@@ -1,19 +1,19 @@
 {
-  "name": "@vbird/prettier-config",
-  "version": "1.0.0",
-  "private": true,
-  "license": "MIT",
-  "type": "module",
-  "files": [
-    "dist"
-  ],
-  "module": "./src/index.mjs",
-  "exports": {
-    ".": {
-      "default": "./src/index.mjs"
-    }
-  },
-  "devDependencies": {
-    "prettier": "3.3.3"
-  }
+	"name": "@vbird/prettier-config",
+	"version": "1.0.0",
+	"private": true,
+	"license": "MIT",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"module": "./src/index.mjs",
+	"exports": {
+		".": {
+			"default": "./src/index.mjs"
+		}
+	},
+	"devDependencies": {
+		"prettier": "3.3.3"
+	}
 }

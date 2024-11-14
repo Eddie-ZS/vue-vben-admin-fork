@@ -1,2 +1,2 @@
 // @ts-nocheck
-export { default } from '@vbird/stylelint-config'
+export { default } from '@vbird/stylelint-config';

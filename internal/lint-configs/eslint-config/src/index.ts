@@ -14,18 +14,18 @@ type FlatConfigPromise = FlatConfig[] | Promise<FlatConfig[]> | TsFlagConfig;
  * @returns
  */
 async function defineConfig(config: FlatConfig[] = []) {
-  const configs: FlatConfigPromise[] = [
-    // 自定义配置
-    ignores(),
-    javascript(),
-    vue(),
-    typescript(),
-    prettier(),
-    config,
-  ];
+	const configs: FlatConfigPromise[] = [
+		// 自定义配置
+		ignores(),
+		javascript(),
+		vue(),
+		typescript(),
+		prettier(),
+		config
+	];
 
-  const resolvedConfig = await Promise.all(configs);
-  return resolvedConfig.flat(Infinity);
+	const resolvedConfig = await Promise.all(configs);
+	return resolvedConfig.flat(Infinity);
 }
 
 export { defineConfig };

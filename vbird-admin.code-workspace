@@ -1,12 +1,12 @@
 {
-  "folders": [
-    {
-      "name": "@vbird/eslint-config",
-      "path": "internal/lint-configs/eslint-config",
-    },
-    {
-      "name": "@vbird/tsconfig",
-      "path": "internal/tsconfig",
-    },
-  ]
+	"folders": [
+		{
+			"name": "@vbird/eslint-config",
+			"path": "internal/lint-configs/eslint-config"
+		},
+		{
+			"name": "@vbird/tsconfig",
+			"path": "internal/tsconfig"
+		}
+	]
 }

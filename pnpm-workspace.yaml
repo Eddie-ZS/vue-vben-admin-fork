@@ -1,7 +1,7 @@
 packages:
   # 选择 apps、scripts、packages、internal、internal/lint-configs 目录下的所有首层子目录的包
-  - "apps/*"
-  - "scripts/*"
-  - "packages/*"
-  - "internal/*"
-  - "internal/lint-configs/*"
+  - 'apps/*'
+  - 'scripts/*'
+  - 'packages/*'
+  - 'internal/*'
+  - 'internal/lint-configs/*'

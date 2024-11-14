@@ -1,1 +1,1 @@
-export const web = 'web-element'
+export const web = 'web-element';

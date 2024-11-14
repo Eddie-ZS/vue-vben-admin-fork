@@ -1,14 +1,14 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Library TsConfig",
-  "extends": "./base.json",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    // 将 class 声明中的字段语义从 [[Set]] 变更到 [[Define]]
-    "useDefineForClassFields": true,
-    "moduleResolution": "bundler",
-    "declaration": true,
-    "noEmit": false
-  }
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Library TsConfig",
+	"extends": "./base.json",
+	"compilerOptions": {
+		"jsx": "preserve",
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		// 将 class 声明中的字段语义从 [[Set]] 变更到 [[Define]]
+		"useDefineForClassFields": true,
+		"moduleResolution": "bundler",
+		"declaration": true,
+		"noEmit": false
+	}
 }
