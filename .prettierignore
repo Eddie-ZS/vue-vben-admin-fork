@@ -1,0 +1,19 @@
+# Ignore artifacts:
+**/.git
+**/.svn
+**/.hg
+node_modules
+dist
+public
+.nitro
+.turbo
+.output
+.nvmrc
+**/node_modules
+**/dist
+**/dist-*
+**/.turbo
+
+# Ignore all HTML files:
+**/*.html
+*-lock.yaml

@@ -1,32 +1,32 @@
 {
-  "name": "@vbird/eslint-config",
-  "version": "1.0.0",
-  "private": true,
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "stub": "pnpm unbuild --stub"
-  },
-  "files": [
-    "dist"
-  ],
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "devDependencies": {
-    "@eslint/js": "9.14.0",
-    "eslint": "9.14.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-unused-imports": "4.1.4",
-    "eslint-plugin-vue": "9.30.0",
-    "globals": "15.12.0",
-    "typescript-eslint": "8.13.0",
-    "vue-eslint-parser": "9.4.3"
-  }
+	"name": "@vbird/eslint-config",
+	"version": "1.0.0",
+	"private": true,
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"stub": "pnpm unbuild --stub"
+	},
+	"files": [
+		"dist"
+	],
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"devDependencies": {
+		"@eslint/js": "9.14.0",
+		"eslint": "9.14.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-prettier": "5.2.1",
+		"eslint-plugin-unused-imports": "4.1.4",
+		"eslint-plugin-vue": "9.30.0",
+		"globals": "15.12.0",
+		"typescript-eslint": "8.13.0",
+		"vue-eslint-parser": "9.4.3"
+	}
 }
