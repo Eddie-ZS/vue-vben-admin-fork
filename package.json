@@ -15,7 +15,6 @@
 		"build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo run build",
 		"prettier": "prettier --check .",
 		"prepare": "husky",
-		"lint-staged": "lint-staged",
 		"lint": "eslint .",
 		"clean": "",
 		"postinstall": "turbo run stub",

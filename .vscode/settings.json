@@ -1,207 +1,207 @@
 {
-  /* workbench*/
-  "workbench.list.smoothScrolling": true, // 平滑滚动
-  "workbench.editor.showTabs": "multiple", // 编辑器标签页显示方式
-  "workbench.editor.enablePreview": false, // 关闭预览, 即在编辑一个文件时打开编辑另一个文件不会覆盖当前编辑的文件而是新建一个标签页
-  "workbench.editor.wrapTabs": true, // 编辑器标签页在空间不足时以多行显示
-  "workbench.tree.indent": 20, // 树形结构缩进
-  "workbench.tree.renderIndentGuides": "always", // 树形结构显示缩进线
-  "workbench.editor.highlightModifiedTabs": true, // 控制是否在具有未保存更改的编辑器的选项卡上绘制顶部边框
-  "workbench.editor.closeOnFileDelete": false, // 控制文件删除时是否关闭编辑器
-  "workbench.startupEditor": "none", // 控制启动时打开的编辑器，none:不打开任何编辑器，welcome:打开欢迎页，readme:打开README.md文件，newUntitledFile:打开一个新的未命名文件，empty:打开一个空白文件
-  // "workbench.editor.limit.enabled": true, // 控制打开的编辑器数是否应受限制。启用后，最近使用较少的编辑器将关闭，以为新打开的编辑器腾出空间。
-  // "workbench.editor.limit.perEditorGroup": true, // 控制最大打开的编辑器的限制是否应应用于每个编辑器组或所有编辑器组。
-  // "workbench.editor.limit.value": 5, // 控制打开编辑器的最大数量。
+	/* workbench*/
+	"workbench.list.smoothScrolling": true, // 平滑滚动
+	"workbench.editor.showTabs": "multiple", // 编辑器标签页显示方式
+	"workbench.editor.enablePreview": false, // 关闭预览, 即在编辑一个文件时打开编辑另一个文件不会覆盖当前编辑的文件而是新建一个标签页
+	"workbench.editor.wrapTabs": true, // 编辑器标签页在空间不足时以多行显示
+	"workbench.tree.indent": 20, // 树形结构缩进
+	"workbench.tree.renderIndentGuides": "always", // 树形结构显示缩进线
+	"workbench.editor.highlightModifiedTabs": true, // 控制是否在具有未保存更改的编辑器的选项卡上绘制顶部边框
+	"workbench.editor.closeOnFileDelete": false, // 控制文件删除时是否关闭编辑器
+	"workbench.startupEditor": "none", // 控制启动时打开的编辑器，none:不打开任何编辑器，welcome:打开欢迎页，readme:打开README.md文件，newUntitledFile:打开一个新的未命名文件，empty:打开一个空白文件
+	// "workbench.editor.limit.enabled": true, // 控制打开的编辑器数是否应受限制。启用后，最近使用较少的编辑器将关闭，以为新打开的编辑器腾出空间。
+	// "workbench.editor.limit.perEditorGroup": true, // 控制最大打开的编辑器的限制是否应应用于每个编辑器组或所有编辑器组。
+	// "workbench.editor.limit.value": 5, // 控制打开编辑器的最大数量。
 
-  /* editor */
-  "editor.tabSize": 2, // 制表符大小
-  "editor.insertSpaces": true, //敲下Tab键时插入2个空格而不是制表符
-  "editor.lineHeight": 1.6, // 行高
-  "editor.cursorStyle": "line", // 光标样式
-  "editor.formatOnSave": true, // 保存时格式化
-  "editor.formatOnPaste": true, //在粘贴时格式化代码
-  "editor.formatOnType": true, //敲完一行代码自动格式化
-  "editor.foldingStrategy": "indentation", // 代码折叠方式
-  "editor.smoothScrolling": true, //使编辑器滚动变平滑
-  "editor.tabCompletion": "on", //启用Tab补全
-  "editor.stickyTabStops": true, // 在缩进上移动光标时2个空格一组来移动，就仿佛它们是制表符(\t)一样
-  "editor.wordBasedSuggestions": "off", // 关闭基于文件中单词来联想的功能（语言自带的联想就够了，开了这个会导致用vscode写MarkDown时的中文引号异常联想）
-  "editor.linkedEditing": true, // html标签自动重命名
-  // "editor.fontFamily": "Consolas, 'Courier New', monospace",//字体设置，个人喜欢Jetbrains Mono作英文字体，思源黑体作中文字体
-  "editor.fontLigatures": true, //启用字体连字
-  "editor.detectIndentation": false, //不基于文件内容选择缩进用制表符还是空格
-  "editor.largeFileOptimizations": false, // 禁用大文件优化，避免编辑器卡顿
-  "editor.accessibilitySupport": "off", // 关闭辅助功能
-  "editor.cursorSmoothCaretAnimation": "on", // 控制是否启用平滑插入动画 on:始终启用平滑脱字号动画 off:禁用平滑脱字号动画
-  "editor.cursorBlinking": "expand", //使编辑器光标的闪烁平滑smooth，或收缩expand，有呼吸感
-  "editor.guides.bracketPairs": "active", // 显示括号对
-  "editor.inlineSuggest.enabled": true, // 显示建议
-  "editor.suggestSelection": "recentlyUsedByPrefix", // 建议选择方式，recentlyUsedByPrefix:最近使用过的前缀，recentlyUsed:最近使用过的，local:本地建议
-  "editor.acceptSuggestionOnEnter": "smart", // 按回车键时接受建议，smart:智能接受，on:始终接受，off:禁用接受
-  "editor.suggest.snippetsPreventQuickSuggestions": false, // 禁用快速建议
-  "editor.stickyScroll.enabled": true, // 编辑器滚动时保持位置
-  "editor.hover.sticky": true, // 控制当鼠标移动到悬停提示上时，其是否保持可见。
-  "editor.suggest.insertMode": "replace", // 控制在插入模式下，是否替换当前选中内容。
-  "editor.bracketPairColorization.enabled": true, // 显示括号对颜色
-  "editor.autoClosingBrackets": "beforeWhitespace", // 控制编辑器是否在左括号后自动插入右括号。beforeWhitespace: 仅当光标位于空白字符左侧时，才自动闭合括号。
-  "editor.autoClosingDelete": "always", // 控制编辑器是否在删除字符后自动关闭括号。always: 总是自动关闭括号。
-  "editor.autoClosingOvertype": "always", // 控制编辑器是否在覆盖字符后自动关闭括号。always: 总是自动关闭括号。
-  "editor.autoClosingQuotes": "beforeWhitespace", // 控制编辑器是否在双引号后自动插入单引号。beforeWhitespace: 仅当光标位于空白字符左侧时，才自动闭合引号。
-  "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?", // 定义单词的分隔符
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit", // 保存时自动修复所有错误
-    "source.organizeImports": "never" // 保存时自动整理导入
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode", // 保存时使用prettier格式化代码
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+	/* editor */
+	"editor.tabSize": 2, // 制表符大小
+	"editor.insertSpaces": true, //敲下Tab键时插入2个空格而不是制表符
+	"editor.lineHeight": 1.6, // 行高
+	"editor.cursorStyle": "line", // 光标样式
+	"editor.formatOnSave": true, // 保存时格式化
+	"editor.formatOnPaste": true, //在粘贴时格式化代码
+	"editor.formatOnType": true, //敲完一行代码自动格式化
+	"editor.foldingStrategy": "indentation", // 代码折叠方式
+	"editor.smoothScrolling": true, //使编辑器滚动变平滑
+	"editor.tabCompletion": "on", //启用Tab补全
+	"editor.stickyTabStops": true, // 在缩进上移动光标时2个空格一组来移动，就仿佛它们是制表符(\t)一样
+	"editor.wordBasedSuggestions": "off", // 关闭基于文件中单词来联想的功能（语言自带的联想就够了，开了这个会导致用vscode写MarkDown时的中文引号异常联想）
+	"editor.linkedEditing": true, // html标签自动重命名
+	// "editor.fontFamily": "Consolas, 'Courier New', monospace",//字体设置，个人喜欢Jetbrains Mono作英文字体，思源黑体作中文字体
+	"editor.fontLigatures": true, //启用字体连字
+	"editor.detectIndentation": false, //不基于文件内容选择缩进用制表符还是空格
+	"editor.largeFileOptimizations": false, // 禁用大文件优化，避免编辑器卡顿
+	"editor.accessibilitySupport": "off", // 关闭辅助功能
+	"editor.cursorSmoothCaretAnimation": "on", // 控制是否启用平滑插入动画 on:始终启用平滑脱字号动画 off:禁用平滑脱字号动画
+	"editor.cursorBlinking": "expand", //使编辑器光标的闪烁平滑smooth，或收缩expand，有呼吸感
+	"editor.guides.bracketPairs": "active", // 显示括号对
+	"editor.inlineSuggest.enabled": true, // 显示建议
+	"editor.suggestSelection": "recentlyUsedByPrefix", // 建议选择方式，recentlyUsedByPrefix:最近使用过的前缀，recentlyUsed:最近使用过的，local:本地建议
+	"editor.acceptSuggestionOnEnter": "smart", // 按回车键时接受建议，smart:智能接受，on:始终接受，off:禁用接受
+	"editor.suggest.snippetsPreventQuickSuggestions": false, // 禁用快速建议
+	"editor.stickyScroll.enabled": true, // 编辑器滚动时保持位置
+	"editor.hover.sticky": true, // 控制当鼠标移动到悬停提示上时，其是否保持可见。
+	"editor.suggest.insertMode": "replace", // 控制在插入模式下，是否替换当前选中内容。
+	"editor.bracketPairColorization.enabled": true, // 显示括号对颜色
+	"editor.autoClosingBrackets": "beforeWhitespace", // 控制编辑器是否在左括号后自动插入右括号。beforeWhitespace: 仅当光标位于空白字符左侧时，才自动闭合括号。
+	"editor.autoClosingDelete": "always", // 控制编辑器是否在删除字符后自动关闭括号。always: 总是自动关闭括号。
+	"editor.autoClosingOvertype": "always", // 控制编辑器是否在覆盖字符后自动关闭括号。always: 总是自动关闭括号。
+	"editor.autoClosingQuotes": "beforeWhitespace", // 控制编辑器是否在双引号后自动插入单引号。beforeWhitespace: 仅当光标位于空白字符左侧时，才自动闭合引号。
+	"editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?", // 定义单词的分隔符
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit", // 保存时自动修复所有错误
+		"source.organizeImports": "never" // 保存时自动整理导入
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode", // 保存时使用prettier格式化代码
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 
-  /* extensions */
-  "extensions.ignoreRecommendations": true, // 禁用推荐扩展
+	/* extensions */
+	"extensions.ignoreRecommendations": true, // 禁用推荐扩展
 
-  /* terminal */
-  // "terminal.integrated.defaultProfile.windows": "Command Prompt",//将终端设为cmd，个人比较喜欢cmd作为终端
-  "terminal.integrated.cursorBlinking": true, // 光标闪烁
-  "terminal.integrated.persistentSessionReviveProcess": "never", // 终端进程恢复策略-永远不要还原终端缓冲区或重新创建流程。
-  "terminal.integrated.tabs.enabled": true, // 启用多标签终端
-  "terminal.integrated.scrollback": 10000, // 终端滚动条最大行数
-  "terminal.integrated.stickyScroll.enabled": true, // 终端滚动时保持位置
+	/* terminal */
+	// "terminal.integrated.defaultProfile.windows": "Command Prompt",//将终端设为cmd，个人比较喜欢cmd作为终端
+	"terminal.integrated.cursorBlinking": true, // 光标闪烁
+	"terminal.integrated.persistentSessionReviveProcess": "never", // 终端进程恢复策略-永远不要还原终端缓冲区或重新创建流程。
+	"terminal.integrated.tabs.enabled": true, // 启用多标签终端
+	"terminal.integrated.scrollback": 10000, // 终端滚动条最大行数
+	"terminal.integrated.stickyScroll.enabled": true, // 终端滚动时保持位置
 
-  /* files */
-  "files.eol": "\n", // 换行符为LF
-  "files.autoSave": "off", // 关闭自动保存
-  "files.trimTrailingWhitespace": true, // 保存时删除行尾空白字符
-  "files.insertFinalNewline": true, // 保存时在文件末尾插入一个空行
+	/* files */
+	"files.eol": "\n", // 换行符为LF
+	"files.autoSave": "off", // 关闭自动保存
+	"files.trimTrailingWhitespace": true, // 保存时删除行尾空白字符
+	"files.insertFinalNewline": true, // 保存时在文件末尾插入一个空行
 
-  // 通过设置file.associations尝试将某种特殊的文件类型关联到一种VScode已经支持的文件类型。这样，这个文件就可以支持语法高亮、格式化、智能提示等其他功能。
-  "files.associations": {
-    // 文件扩展名关联
-    "*.ejs": "html",
-    "*.art": "html",
-    "**/tsconfig.json": "jsonc",
-    "*.json": "jsonc",
-    "package.json": "json"
-  },
+	// 通过设置file.associations尝试将某种特殊的文件类型关联到一种VScode已经支持的文件类型。这样，这个文件就可以支持语法高亮、格式化、智能提示等其他功能。
+	"files.associations": {
+		// 文件扩展名关联
+		"*.ejs": "html",
+		"*.art": "html",
+		"**/tsconfig.json": "jsonc",
+		"*.json": "jsonc",
+		"package.json": "json"
+	},
 
-  // 排除文件
-  "files.exclude": {
-    "**/.eslintcache": true,
-    "**/bower_components": true,
-    "**/.turbo": true,
-    "**/.idea": true,
-    "**/tmp": true,
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.stylelintcache": true,
-    "**/.DS_Store": true,
-    "**/vite.config.mts.*": true,
-    "**/tea.yaml": true
-  },
+	// 排除文件
+	"files.exclude": {
+		"**/.eslintcache": true,
+		"**/bower_components": true,
+		"**/.turbo": true,
+		"**/.idea": true,
+		"**/tmp": true,
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.stylelintcache": true,
+		"**/.DS_Store": true,
+		"**/vite.config.mts.*": true,
+		"**/tea.yaml": true
+	},
 
-  // 排除文件监视
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/.vscode/**": true,
-    "**/node_modules/**": true,
-    "**/tmp/**": true,
-    "**/bower_components/**": true,
-    "**/dist/**": true,
-    "**/yarn.lock": true
-  },
+	// 排除文件监视
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/.vscode/**": true,
+		"**/node_modules/**": true,
+		"**/tmp/**": true,
+		"**/bower_components/**": true,
+		"**/dist/**": true,
+		"**/yarn.lock": true
+	},
 
-  /* search */
-  "search.followSymlinks": false, // 禁用符号链接搜索
+	/* search */
+	"search.followSymlinks": false, // 禁用符号链接搜索
 
-  // 此配置用于控制 VSCode 中的搜索行为，排除指定路径下的文件和文件夹，以提高搜索效率并避免不必要的结果。
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/pnpm-lock.yaml": true,
-    "**/yarn.lock": true,
-    "**/package-lock.json": true,
-    "**/*.log": true,
-    "**/*.log*": true,
-    "**/.DS_Store": true,
-    "**/.turbo": true,
-    "**/.svn": true,
-    "**/.git": true,
-    "**/.gitignore": true,
-    "**/.idea": true,
-    "**/.vscode": true,
-    "**/build": true,
-    "**/dist": true,
-    "**/tmp": true,
-    "out": true,
-    "dist": true,
-    "node_modules": true,
-    "CHANGELOG.md": true
-  },
+	// 此配置用于控制 VSCode 中的搜索行为，排除指定路径下的文件和文件夹，以提高搜索效率并避免不必要的结果。
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/pnpm-lock.yaml": true,
+		"**/yarn.lock": true,
+		"**/package-lock.json": true,
+		"**/*.log": true,
+		"**/*.log*": true,
+		"**/.DS_Store": true,
+		"**/.turbo": true,
+		"**/.svn": true,
+		"**/.git": true,
+		"**/.gitignore": true,
+		"**/.idea": true,
+		"**/.vscode": true,
+		"**/build": true,
+		"**/dist": true,
+		"**/tmp": true,
+		"out": true,
+		"dist": true,
+		"node_modules": true,
+		"CHANGELOG.md": true
+	},
 
-  /* 控制相关文件嵌套展示 */
-  "explorer.fileNesting.enabled": true, // 启用文件嵌套
-  "explorer.fileNesting.expand": false, // 控制是否自动扩展文件嵌套
-  "explorer.fileNesting.patterns": {
-    // 定义文件嵌套规则
-    "*.ts": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx, $(capture).d.ts",
-    "*.tsx": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx,$(capture).d.ts",
-    "*.env": "$(capture).env.*",
-    "README.md": "README*,CHANGELOG*,LICENSE,CNAME",
-    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,.gitattributes,.gitignore,.gitpod.yml,.npmrc,.browserslistrc,.node-version,.git*,.tazerc.json",
-    "eslint.config.mjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,prettier.config.*,stylelint.config.*,.lintstagedrc.mjs,cspell.json",
-    "tailwind.config.mjs": "postcss.*"
-  },
+	/* 控制相关文件嵌套展示 */
+	"explorer.fileNesting.enabled": true, // 启用文件嵌套
+	"explorer.fileNesting.expand": false, // 控制是否自动扩展文件嵌套
+	"explorer.fileNesting.patterns": {
+		// 定义文件嵌套规则
+		"*.ts": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx, $(capture).d.ts",
+		"*.tsx": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx,$(capture).d.ts",
+		"*.env": "$(capture).env.*",
+		"README.md": "README*,CHANGELOG*,LICENSE,CNAME",
+		"package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,.gitattributes,.gitignore,.gitpod.yml,.npmrc,.browserslistrc,.node-version,.git*,.tazerc.json",
+		"eslint.config.mjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,prettier.config.*,stylelint.config.*,lint-staged.config.*,.lintstagedrc.mjs,cspell.json",
+		"tailwind.config.mjs": "postcss.*"
+	},
 
-  /* javsscript、typescript、vue */
-  "javascript.format.semicolons": "remove", // 移除分号
-  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true, // 匿名函数后加空格
-  "javascript.suggest.autoImports": true, // 自动导入
-  "typescript.format.semicolons": "remove", // 移除分号
-  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true, // 匿名函数后加空格
-  "typescript.inlayHints.enumMemberValues.enabled": true, // 显示枚举成员值
-  "typescript.preferences.preferTypeOnlyAutoImports": true, // 尽可能在自动导入中包含 type 关键字。
-  "typescript.suggest.autoImports": true, // 自动导入
-  "vue.updateImportsOnFileMove.enabled": true, // 移动文件时自动更新导入路径
+	/* javsscript、typescript、vue */
+	"javascript.format.semicolons": "remove", // 移除分号
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true, // 匿名函数后加空格
+	"javascript.suggest.autoImports": true, // 自动导入
+	"typescript.format.semicolons": "remove", // 移除分号
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true, // 匿名函数后加空格
+	"typescript.inlayHints.enumMemberValues.enabled": true, // 显示枚举成员值
+	"typescript.preferences.preferTypeOnlyAutoImports": true, // 尽可能在自动导入中包含 type 关键字。
+	"typescript.suggest.autoImports": true, // 自动导入
+	"vue.updateImportsOnFileMove.enabled": true, // 移动文件时自动更新导入路径
 
-  "errorLens.enabledDiagnosticLevels": ["warning", "error"], // 显示错误提示
-  "errorLens.excludeBySource": ["cSpell", "Grammarly", "eslint"], // 禁用错误提示来自指定插件
+	"errorLens.enabledDiagnosticLevels": ["warning", "error"], // 显示错误提示
+	"errorLens.excludeBySource": ["cSpell", "Grammarly", "eslint"], // 禁用错误提示来自指定插件
 
-  "emmet.showSuggestionsAsSnippets": true, // 若为 true，Emmet 建议将显示为代码片段。
-  "emmet.triggerExpansionOnTab": false, // 启用后，在按 Tab 时会展开 Emmet 缩写，即使未显示完成。禁用后，仍可通过按 TAB 接受显示的完成。
+	"emmet.showSuggestionsAsSnippets": true, // 若为 true，Emmet 建议将显示为代码片段。
+	"emmet.triggerExpansionOnTab": false, // 启用后，在按 Tab 时会展开 Emmet 缩写，即使未显示完成。禁用后，仍可通过按 TAB 接受显示的完成。
 
-  /* other */
-  "debug.onTaskErrors": "debugAnyway", // 调试任务失败时是否继续调试
-  "diffEditor.ignoreTrimWhitespace": false, // 禁用对比编辑器忽略空格
-  "npm.packageManager": "pnpm", // npm包管理器为pnpm
+	/* other */
+	"debug.onTaskErrors": "debugAnyway", // 调试任务失败时是否继续调试
+	"diffEditor.ignoreTrimWhitespace": false, // 禁用对比编辑器忽略空格
+	"npm.packageManager": "pnpm", // npm包管理器为pnpm
 
-  // 禁用css/less/scss校验
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false
+	// 禁用css/less/scss校验
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false
 }
