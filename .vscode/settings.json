@@ -203,5 +203,7 @@
 	// 禁用css/less/scss校验
 	"css.validate": false,
 	"less.validate": false,
-	"scss.validate": false
+	"scss.validate": false,
+	"files.autoGuessEncoding": true,
+	"files.candidateGuessEncodings": ["utf8"]
 }
