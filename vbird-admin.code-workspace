@@ -1,8 +1,24 @@
 {
 	"folders": [
 		{
+			"name": "@vbird/commitlint-config",
+			"path": "internal/lint-configs/commitlint-config"
+		},
+		{
 			"name": "@vbird/eslint-config",
 			"path": "internal/lint-configs/eslint-config"
+		},
+		{
+			"name": "@vbird/prettier-config",
+			"path": "internal/lint-configs/prettier-config"
+		},
+		{
+			"name": "@vbird/stylelint-config",
+			"path": "internal/lint-configs/stylelint-config"
+		},
+		{
+			"name": "@vbird/node-utils",
+			"path": "internal/node-utils"
 		},
 		{
 			"name": "@vbird/tsconfig",

@@ -42,7 +42,6 @@ export async function javascript(): Promise<Linter.Config[]> {
 				eqeqeq: 'error', // 要求使用全等
 				'new-cap': ['error', { capIsNew: false, newIsCap: true, properties: true }],
 
-				'no-console': ['error', { allow: ['warn', 'error'] }],
 				'no-const-assign': 'error', // 禁止修改const声明的变量
 				'no-var': 'error', // 禁止使用var声明变量
 				'no-empty': ['error', { allowEmptyCatch: true }],
