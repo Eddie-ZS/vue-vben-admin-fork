@@ -5,6 +5,7 @@ public
 .nitro
 .turbo
 .output
+.gitignore
 
 
 **/.git

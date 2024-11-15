@@ -85,7 +85,7 @@ export async function javascript(): Promise<Linter.Config[]> {
 					}
 				],
 				'no-unused-vars': [
-					'error',
+					'warn',
 					{
 						args: 'none',
 						caughtErrors: 'none',
@@ -112,7 +112,7 @@ export async function javascript(): Promise<Linter.Config[]> {
 				],
 				'unused-imports/no-unused-imports': 'error',
 				'unused-imports/no-unused-vars': [
-					'error',
+					'warn',
 					{
 						args: 'after-used',
 						argsIgnorePattern: '^_',

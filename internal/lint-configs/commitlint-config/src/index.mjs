@@ -4,6 +4,7 @@ const { packages } = getPackagesSync();
 /** @type {import('cz-git').UserConfig} */
 const userConfig = {
 	extends: ['@commitlint/config-conventional'],
+	plugins: ['commitlint-plugin-function-rules'],
 	prompt: {},
 	rules: {
 		// 类型枚举，git提交type必须是以下类型
