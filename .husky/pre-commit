@@ -1,3 +1,4 @@
+# lint-staged 对暂存区的代码进行检验（格式化）
 pnpm exec lint-staged
 
 echo Run pre-commit hook done.

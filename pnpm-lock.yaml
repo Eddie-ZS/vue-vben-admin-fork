@@ -87,7 +87,7 @@ importers:
   apps/web-element: {}
 
   internal/lint-configs/commitlint-config:
-    dependencies:
+    devDependencies:
       '@commitlint/cli':
         specifier: 19.5.0
         version: 19.5.0(@types/node@22.9.0)(typescript@5.6.3)

@@ -1,8 +1,10 @@
-// const { packages } = getPackagesSync();
+import { getPackagesSync } from '@vbird/node-utils';
+const { packages } = getPackagesSync();
 
 /** @type {import('cz-git').UserConfig} */
 const userConfig = {
 	extends: ['@commitlint/config-conventional'],
+	prompt: {},
 	rules: {
 		// 类型枚举，git提交type必须是以下类型
 		'type-enum': [
