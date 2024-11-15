@@ -174,7 +174,7 @@
 		"*.env": "$(capture).env.*",
 		"README.md": "README*,CHANGELOG*,LICENSE,CNAME",
 		"package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,.gitattributes,.gitignore,.gitpod.yml,.npmrc,.browserslistrc,.node-version,.git*,.tazerc.json",
-		"eslint.config.mjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,prettier.config.*,stylelint.config.*,lint-staged.config.*,.lintstagedrc.mjs,cspell.json",
+		"eslint.config.mjs": ".eslintignore,.prettierignore,.stylelintignore,,commitlint.config.*,prettier.config.*,stylelint.config.*,lint-staged.config.*,cspell.json",
 		"tailwind.config.mjs": "postcss.*"
 	},
 

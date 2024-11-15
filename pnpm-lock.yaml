@@ -20,6 +20,9 @@ importers:
       '@types/node':
         specifier: ^22.9.0
         version: 22.9.0
+      '@vbird/commitlint-config':
+        specifier: workspace:*
+        version: link:internal/lint-configs/commitlint-config
       '@vbird/eslint-config':
         specifier: workspace:*
         version: link:internal/lint-configs/eslint-config
@@ -91,6 +94,15 @@ importers:
       '@commitlint/config-conventional':
         specifier: 19.5.0
         version: 19.5.0
+      commitlint-plugin-function-rules:
+        specifier: 4.0.1
+        version: 4.0.1(@commitlint/lint@19.5.0)
+      cz-git:
+        specifier: 1.11.0
+        version: 1.11.0
+      czg:
+        specifier: 1.11.0
+        version: 1.11.0
 
   internal/lint-configs/eslint-config:
     devDependencies:
@@ -1762,6 +1774,12 @@ packages:
     resolution: {integrity: sha512-bKw/r35jR3HGt5PEPm1ljsQQGyCrR8sFGNiN5L+ykDHdpO8Smxkrkla9Yi6NkQyUrb8V54PGhfMs6NrIwtxtdw==}
     engines: {node: '>= 6'}
 
+  commitlint-plugin-function-rules@4.0.1:
+    resolution: {integrity: sha512-q3zniafaRo41x0eatCCe1ai9Tge4ArK4Mc5rVXTCtj6D9s0unxYpCnFiyLVOpKyz8za78qlZacCHTErvHnU+dw==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@commitlint/lint': '>=19 <20'
+
   commondir@1.0.1:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
 
@@ -1923,6 +1941,15 @@ packages:
 
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+
+  cz-git@1.11.0:
+    resolution: {integrity: sha512-FCNkpyVmNPX0P8kHtX8uoFcXsJ4bjivMXVS5vc/qCyM8jj+Tuqo6CXQjGQKwKl0Lk9VNz7o6JfPoU/mM/XhxqA==}
+    engines: {node: '>=v12.20.0'}
+
+  czg@1.11.0:
+    resolution: {integrity: sha512-go39avnHPvDn1HF4LS1qxj5XPGCQexZ9+y8f+0VlE9plZgRyWUOl4rUCwE4vD1azouIhz/KaauB45A7jPfMxpw==}
+    engines: {node: '>=v12.20.0'}
+    hasBin: true
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -5444,6 +5471,10 @@ snapshots:
       has-own-prop: 2.0.0
       repeat-string: 1.6.1
 
+  commitlint-plugin-function-rules@4.0.1(@commitlint/lint@19.5.0):
+    dependencies:
+      '@commitlint/lint': 19.5.0
+
   commondir@1.0.1: {}
 
   compare-func@2.0.0:
@@ -5679,6 +5710,10 @@ snapshots:
       css-tree: 2.2.1
 
   csstype@3.1.3: {}
+
+  cz-git@1.11.0: {}
+
+  czg@1.11.0: {}
 
   dargs@8.1.0: {}
 
