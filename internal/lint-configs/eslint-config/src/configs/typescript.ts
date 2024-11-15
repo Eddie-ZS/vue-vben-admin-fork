@@ -27,7 +27,15 @@ export async function typescript() {
 		rules: {
 			...tsEslint.configs.eslintRecommended.rules, // 启用 eslint 推荐的规则
 			// @see https://typescript-eslint.io/rules/ban-ts-comment/
-			'@typescript-eslint/ban-ts-comment': 'error',
+			'@typescript-eslint/ban-ts-comment': [
+				'error',
+				{
+					'ts-check': false,
+					'ts-expect-error': 'allow-with-description',
+					'ts-ignore': 'allow-with-description',
+					'ts-nocheck': 'allow-with-description'
+				}
+			],
 			'@typescript-eslint/consistent-type-definitions': 'off', // 允许使用 interface 和 type 定义
 			'@typescript-eslint/explicit-function-return-type': 'off', // 要求对函数和类方法进行显式返回类型
 			'@typescript-eslint/explicit-module-boundary-types': 'off', // 要求在导出的函数和类的公共类方法上显式返回和参数类型
