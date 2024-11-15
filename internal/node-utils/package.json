@@ -1,0 +1,26 @@
+{
+	"name": "@vbird/node-utils",
+	"version": "1.0.0",
+	"private": true,
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"stub": "pnpm unbuild --stub"
+	},
+	"files": [
+		"dist"
+	],
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"default": "./dist/index.mjs",
+			"import": "./dist/index.mjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"dependencies": {
+		"@manypkg/get-packages": "2.2.2",
+		"find-up": "7.0.0"
+	}
+}
