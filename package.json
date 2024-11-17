@@ -13,7 +13,7 @@
 	"scripts": {
 		"dev": "turbo run dev",
 		"build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo run build",
-		"cz": "czg",
+		"commit": "czg",
 		"prettier": "prettier --check .",
 		"prepare": "husky",
 		"lint": "eslint .",

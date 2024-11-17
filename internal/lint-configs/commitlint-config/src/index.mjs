@@ -1,6 +1,9 @@
 import { getPackagesSync } from '@vbird/node-utils';
 const { packages } = getPackagesSync();
 
+const allowScopedPackages = [...packages.map((pkg) => pkg.packageJson.name), 'ci'];
+
+// /** @type {import('czg').UserConfig} */
 /** @type {import('cz-git').UserConfig} */
 const userConfig = {
 	extends: ['@commitlint/config-conventional'],
