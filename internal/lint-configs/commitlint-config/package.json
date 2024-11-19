@@ -19,7 +19,6 @@
 		"@commitlint/config-conventional": "19.5.0",
 		"@vbird/node-utils": "workspace:*",
 		"commitlint-plugin-function-rules": "4.0.1",
-		"cz-git": "1.10.1",
 		"czg": "1.10.1"
 	}
 }

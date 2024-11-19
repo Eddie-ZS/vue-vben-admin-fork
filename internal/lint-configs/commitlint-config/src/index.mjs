@@ -3,8 +3,7 @@ const { packages } = getPackagesSync();
 
 const allowScopedPackages = [...packages.map((pkg) => pkg.packageJson.name), 'ci'];
 
-// /** @type {import('czg').UserConfig} */
-/** @type {import('cz-git').UserConfig} */
+/** @type {import('czg').UserConfig} */
 const userConfig = {
 	extends: ['@commitlint/config-conventional'],
 	plugins: ['commitlint-plugin-function-rules'], // 使用函数作为规则值。
@@ -89,6 +88,15 @@ const userConfig = {
 		]
 	},
 	prompt: {
+		// 用来定义一些常用的git commit message。
+		/** @use czg :b | czg --alias=b | pnpm commit :b */
+		alias: {
+			b: 'build: bump dependencies',
+			c: 'chore: update config',
+			s: 'style: format code',
+			f: 'fix: fix a bug'
+		},
+		// 中英文 配置模板
 		messages: {
 			type: '选择你要提交的类型 :',
 			scope: '选择一个提交范围（可选）:',
@@ -105,16 +113,20 @@ const userConfig = {
 			{ value: 'feat', name: 'feat:     新增功能 | A new feature' },
 			{ value: 'fix', name: 'fix:      修复缺陷 | A bug fix' },
 			{ value: 'docs', name: 'docs:     文档更新 | Documentation only changes' },
-			{ value: 'style', name: 'style:    代码格式 | Changes that do not affect the meaning of the code' },
-			{ value: 'refactor', name: 'refactor: 代码重构 | A code change that neither fixes a bug nor adds a feature' },
+			{ value: 'style', name: 'style:     代码格式 | Changes that do not affect the meaning of the code' },
+			{ value: 'refactor', name: 'refactor:     代码重构 | A code change that neither fixes a bug nor adds a feature' },
 			{ value: 'perf', name: 'perf:     性能提升 | A code change that improves performance' },
 			{ value: 'test', name: 'test:     测试相关 | Adding missing tests or correcting existing tests' },
 			{ value: 'build', name: 'build:    构建相关 | Changes that affect the build system or external dependencies' },
 			{ value: 'ci', name: 'ci:       持续集成 | Changes to our CI configuration files and scripts' },
 			{ value: 'revert', name: 'revert:   回退代码 | Revert to a commit' },
 			{ value: 'chore', name: 'chore:    其他修改 | Other changes that do not modify src or test files' },
-			{ value: 'types', name: 'type: 类型定义文件修改 | ' }
-		]
+			{ value: 'types', name: 'type:    类型定义文件修改 | The type definition file is modified' }
+		],
+
+		useEmoji: true, // 使用emoji来标识提交类型
+		allowCustomIssuePrefix: false, // 是否允许自定义issue前缀
+		allowEmptyIssuePrefix: false // 是否允许空issue前缀
 	}
 };
 export default userConfig;

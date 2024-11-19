@@ -1,5 +1,6 @@
 echo Start running commit-msg hook...
 
+# 检查提交信息是否符合规范
 pnpm exec commitlint --edit "$1"
 
 echo Run commit-msg hook done.
