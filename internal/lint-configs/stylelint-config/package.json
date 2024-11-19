@@ -7,12 +7,12 @@
 	"files": [
 		"dist"
 	],
-	"main": "./index.mjs",
-	"module": "./index.mjs",
+	"main": "./src/index.mjs",
+	"module": "./src/index.mjs",
 	"exports": {
 		".": {
-			"import": "./index.mjs",
-			"default": "./index.mjs"
+			"import": "./src/index.mjs",
+			"default": "./src/index.mjs"
 		}
 	},
 	"devDependencies": {
