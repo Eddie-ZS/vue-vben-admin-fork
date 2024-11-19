@@ -105,8 +105,7 @@ const userConfig = {
 		alias: {
 			b: 'build: bump dependencies',
 			c: 'chore: update config',
-			s: 'style: format code',
-			f: 'fix: fix a bug'
+			s: 'style: format code'
 		},
 
 		allowCustomIssuePrefix: false, // 是否允许自定义issue前缀
