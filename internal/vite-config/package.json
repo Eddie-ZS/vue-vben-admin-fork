@@ -1,0 +1,19 @@
+{
+	"name": "@vbird/vite-config",
+	"version": "1.0.0",
+	"private": true,
+	"license": "MIT",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"main": "./src/index.mjs",
+	"module": "./src/index.mjs",
+	"exports": {
+		".": {
+			"import": "./src/index.mjs",
+			"default": "./src/index.mjs"
+		}
+	},
+	"devDependencies": {}
+}
