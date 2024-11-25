@@ -11,12 +11,12 @@ import { findUpSync } from 'find-up';
  * @param cwd 默认值 process.cwd() 根目录
  */
 function findMonorepoRoot(cwd: string = process.cwd()) {
-	// findUpSync 通过指定文件查询所在目录 返回 D:\my\vue\vben-admin\vue-vben-admin-fork\pnpm-lock.yaml
+	// findUpSync 通过指定文件查询所在目录 返回 D:\my\vue\vbird-admin\vue-vbird-admin-fork\pnpm-lock.yaml
 	const lockFile = findUpSync(['pnpm-lock.yaml', 'package-lock.json', 'yarn.lock'], {
 		cwd,
 		type: 'file'
 	});
-	// dirname 解析出 文件 所在的 目录路径   D:\my\vue\vben-admin\vue-vben-admin-fork
+	// dirname 解析出 文件 所在的 目录路径   D:\my\vue\vbird-admin\vue-vbird-admin-fork
 	return dirname(lockFile || '');
 }
 
