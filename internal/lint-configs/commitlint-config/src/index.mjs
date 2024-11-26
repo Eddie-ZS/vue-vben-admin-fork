@@ -2,7 +2,7 @@ import { execSync } from 'node:child_process';
 import { getPackagesSync } from '@vbird/node-utils';
 const { packages } = getPackagesSync();
 
-// scope-enum, 提交信息时只能从中选择
+// scope-enum, 提交信息时的scope选项只能从中选择
 const allowScopedPackages = [...packages.map((pkg) => pkg.packageJson.name), 'project', 'style', 'lint', 'ci', 'dev', 'deploy', 'other'];
 
 // precomputed scope
