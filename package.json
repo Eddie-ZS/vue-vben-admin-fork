@@ -30,6 +30,7 @@
 		"@vbird/prettier-config": "workspace:*",
 		"@vbird/stylelint-config": "workspace:*",
 		"@vbird/tsconfig": "workspace:*",
+		"@vbird/vite-config": "workspace:*",
 		"@vitejs/plugin-vue": "^5.2.0",
 		"@vitejs/plugin-vue-jsx": "^4.1.0",
 		"autoprefixer": "^10.4.20",
