@@ -89,7 +89,8 @@ export async function javascript(): Promise<Linter.Config[]> {
 					{
 						args: 'none',
 						caughtErrors: 'none',
-						ignoreRestSiblings: false,
+						// 是否自动清除未使用的导入
+						ignoreRestSiblings: true,
 						vars: 'all'
 					}
 				],
