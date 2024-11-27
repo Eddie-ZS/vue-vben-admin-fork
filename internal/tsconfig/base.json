@@ -35,6 +35,8 @@
 		"noEmit": true,
 		// 用于 隔离（isolated）转译的功能 （具体原因请看 vite - TypeScript 编译器选项）
 		"isolatedModules": true,
+		// 下列两个选项用于执行默认导入
+		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 		// 用来指定编译时是否生成.map文件
 		"sourceMap": false,
