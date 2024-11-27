@@ -89,7 +89,7 @@ export async function javascript(): Promise<Linter.Config[]> {
 					{
 						args: 'none',
 						caughtErrors: 'none',
-						ignoreRestSiblings: true,
+						ignoreRestSiblings: false,
 						vars: 'all'
 					}
 				],
@@ -114,9 +114,7 @@ export async function javascript(): Promise<Linter.Config[]> {
 				'unused-imports/no-unused-vars': [
 					'warn',
 					{
-						args: 'after-used',
 						argsIgnorePattern: '^_',
-						vars: 'all',
 						varsIgnorePattern: '^_'
 					}
 				]

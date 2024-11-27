@@ -29,7 +29,7 @@ function getPackagesSync() {
 }
 
 /**
- * 异步获取大仓所有包
+ * 基于 Promise 获取大仓所有包
  */
 async function getPackagesAsync() {
 	const root = findMonorepoRoot();
