@@ -18,7 +18,7 @@
 		"prepare": "husky",
 		"lint": "eslint .",
 		"clean": "",
-		"postinstall": "turbo run stub",
+		"postinstall": "pnpm -r run stub --if-present",
 		"reinstall": "pnpm clean --del-lock && pnpm install"
 	},
 	"devDependencies": {
