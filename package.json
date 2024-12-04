@@ -18,7 +18,7 @@
 		"prepare": "husky",
 		"lint": "eslint .",
 		"clean": "",
-		"postinstall": "pnpm -r run stub --if-present",
+		"postinstall": "turbo run stub",
 		"reinstall": "pnpm clean --del-lock && pnpm install"
 	},
 	"devDependencies": {
@@ -52,7 +52,7 @@
 		"node": ">=20",
 		"pnpm": ">=9"
 	},
-	"packageManager": "pnpm@9.11.0",
+	"packageManager": "pnpm@9.14.4",
 	"pnpm": {
 		"peerDependenciesRules": {
 			"allowedVersions": {
