@@ -18,3 +18,5 @@ function getConfFiles() {
 async function loadEnv<T = Record<string, string>>(match = 'VITE_GLOB_', confFiles = getConfFiles()) {
 	return {} as T;
 }
+
+export { getConfFiles, loadEnv };
