@@ -15,5 +15,7 @@
 			"default": "./src/index.mjs"
 		}
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"dotenv": "16.4.7"
+	}
 }

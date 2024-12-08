@@ -27,6 +27,7 @@
 		"@types/node": "^22.9.3",
 		"@vbird/commitlint-config": "workspace:*",
 		"@vbird/eslint-config": "workspace:*",
+		"@vbird/node-utils": "workspace:*",
 		"@vbird/prettier-config": "workspace:*",
 		"@vbird/stylelint-config": "workspace:*",
 		"@vbird/tsconfig": "workspace:*",
