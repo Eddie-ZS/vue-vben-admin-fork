@@ -51,4 +51,17 @@ async function loadEnv<T = Record<string, string>>(match = 'VITE_GLOB_', confFil
 	return envConfig as T;
 }
 
-export { getConfFiles, loadEnv };
+/**
+ *
+ */
+async function loadAndConvertEnv(
+	match = 'VITE_',
+	confFiles = getConfFiles()
+): Promise<{
+	appTitle: string;
+}> {
+	return {
+		appTitle: 'Vbird Admin'
+	};
+}
+export { getConfFiles, loadEnv, loadAndConvertEnv };
