@@ -5,6 +5,12 @@ import { fs } from '@vbird/node-utils';
 
 import dotenv from 'dotenv';
 
+const getString = (value: string | undefined, defaultValue: string) => value ?? defaultValue;
+
+const getBoolean = (value: string | undefined) => value === 'true';
+
+const getNumber = (value: string | undefined, defaultValue: number) => Number(value) || defaultValue;
+
 /**
  * 获取当前环境下生效的配置文件名
  */
@@ -59,9 +65,13 @@ async function loadAndConvertEnv(
 	confFiles = getConfFiles()
 ): Promise<{
 	appTitle: string;
+	base: string;
+	port: number;
 }> {
 	return {
-		appTitle: 'Vbird Admin'
+		appTitle: getString('', 'Vbird Admin'),
+		base: getString('', '/'),
+		port: getNumber('3000', 3000)
 	};
 }
 export { getConfFiles, loadEnv, loadAndConvertEnv };
