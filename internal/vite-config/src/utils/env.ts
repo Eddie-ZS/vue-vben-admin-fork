@@ -58,7 +58,7 @@ async function loadEnv<T = Record<string, string>>(match = 'VITE_GLOB_', confFil
 }
 
 /**
- *
+ * 读取环境变量并转换成对象
  */
 async function loadAndConvertEnv(
 	match = 'VITE_',
