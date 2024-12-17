@@ -31,7 +31,7 @@ async function viteInjectAppLoadingPlugin(
 	return {
 		// 指定插件顺序
 		enforce: 'pre',
-		name: 'vite:inject-app-loading',
+		name: 'vite-plugin:inject-app-loading',
 		// @see https://cn.vitejs.dev/guide/api-plugin#transformindexhtml
 		transformIndexHtml: {
 			handler(html) {
@@ -46,7 +46,7 @@ async function viteInjectAppLoadingPlugin(
 
 /**
  * 用于获取loading的html模板
- * @default 支持在app内自定义loading模板，模版参考default-loading.html即可
+ * @description 支持在app内自定义loading模板，模版参考default-loading.html即可
  */
 async function getLoadingRawByHtmlTemplate(loadingTemplate: string) {
 	// 获取loading的html模板路径
