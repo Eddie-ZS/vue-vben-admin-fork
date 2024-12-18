@@ -136,18 +136,19 @@ type ApplicationOptions = ApplicationPluginOptions;
 
 type LibraryOptions = LibraryPluginOptions;
 
-// 应用类型
+// 自定义应用类型
 type DefineApplicationOptions = (config?: ConfigEnv) => Promise<{
 	application?: ApplicationOptions;
 	vite?: UserConfig;
 }>;
 
-// 包类型
+// 自定义库类型
 type DefineLibraryOptions = (config?: ConfigEnv) => Promise<{
 	library?: LibraryOptions;
 	vite?: UserConfig;
 }>;
 
+// Vite 自定义配置类型
 type DefineConfig = DefineApplicationOptions | DefineLibraryOptions;
 
 export type {

@@ -5,6 +5,13 @@ import { fileURLToPath } from 'node:url';
 import { readPackageJSON } from '@vbird/node-utils';
 import type { PluginOption } from 'vite';
 
+/**
+ * @description 用于在app内显示loading动画，并根据用户的主题切换loading的颜色
+ * @param isBuild 是否是生产环境
+ * @param env
+ * @param loadingTemplate loading html模板路径
+ * @returns
+ */
 async function viteInjectAppLoadingPlugin(
 	isBuild: boolean,
 	env: Record<string, any> = {},

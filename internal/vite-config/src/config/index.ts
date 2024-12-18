@@ -4,9 +4,14 @@ import { execSync } from 'node:child_process';
 import { defineApplicationConfig } from './application';
 import { defineLibraryConfig } from './library';
 
+/**
+ * @description: 生成 vite 配置
+ * @param {DefineConfig} useConfigPromise 用户自定义配置函数
+ * @param {'application' | 'auto' | 'library'} type 项目类型
+ */
 function defineConfig(useConfigPromise?: DefineConfig, type: 'application' | 'auto' | 'library' = 'auto') {
 	let projectType = type;
-	//  若类型为 auto, 判断根目录下是否存在 index.html, 若存在则为 application, 否则为 library
+	//  若类型为 auto, 判断根目录下是否存在 index.html, 若存在则为 application（应用）, 否则为 library（库）
 	if (projectType === 'auto') {
 		const indexPath = join(process.cwd(), 'index.html');
 		projectType = execSync(indexPath) ? 'application' : 'library';

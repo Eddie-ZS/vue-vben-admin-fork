@@ -8,6 +8,7 @@ import archiver from 'archiver';
 
 /**
  * @description 通过流式处理的方式压缩打包后的文件
+ * @param {ArchiverPluginOptions} options 配置项
  */
 function viteArchiverPlugin(options: ArchiverPluginOptions = {}): PluginOption {
 	return {
