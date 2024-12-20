@@ -15,9 +15,10 @@ import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteArchiverPlugin } from './archiver';
 
 /**
- * 获取条件成立的 vite 插件
+ * @description 获取条件成立的 vite 插件
+ * @param {ConditionPlugin[]} conditionPlugins 条件插件列表
  */
-async function loadConditionPlugins(conditionPlugins: ConditionPlugin[]) {
+async function loadConditionPlugins(conditionPlugins: ConditionPlugin[]): Promise<PluginOption[]> {
 	const plugins: PluginOption[] = [];
 	for (const conditionPlugin of conditionPlugins) {
 		if (conditionPlugin.condition) {
@@ -28,7 +29,8 @@ async function loadConditionPlugins(conditionPlugins: ConditionPlugin[]) {
 }
 
 /**
- * 根据条件获取通用的vite插件
+ * @description 根据条件获取通用的vite插件
+ * @param {CommonPluginOptions} options 通用插件选项
  */
 async function loadCommonPlugins(options: CommonPluginOptions): Promise<ConditionPlugin[]> {
 	const { isBuild, injectMetadata, visualizer, devtools } = options;
@@ -54,7 +56,8 @@ async function loadCommonPlugins(options: CommonPluginOptions): Promise<Conditio
 }
 
 /**
- * 根据条件获取应用类型的vite插件
+ * @description 根据条件获取应用类型的vite插件
+ * @param {ApplicationPluginOptions} options 应用插件选项
  */
 async function loadApplicationPlugins(options: ApplicationPluginOptions): Promise<PluginOption[]> {
 	// 单独取出，不然会导致 commonOptions 无法读取
@@ -164,7 +167,8 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 }
 
 /**
- * 根据条件获取库类型的vite插件
+ * @description 根据条件获取库类型的vite插件
+ * @param {LibraryPluginOptions} options 库插件选项
  */
 async function loadLibraryPlugins(options: LibraryPluginOptions): Promise<PluginOption[]> {
 	const isBuild = options.isBuild;
