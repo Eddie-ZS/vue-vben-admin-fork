@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "@vbird/web-element",
+			"path": "apps/web-element"
+		},
+		{
 			"name": "@vbird/commitlint-config",
 			"path": "internal/lint-configs/commitlint-config"
 		},
@@ -23,6 +27,10 @@
 		{
 			"name": "@vbird/tsconfig",
 			"path": "internal/tsconfig"
+		},
+		{
+			"name": "@vbird/vite-config",
+			"path": "internal/vite-config"
 		}
 	]
 }

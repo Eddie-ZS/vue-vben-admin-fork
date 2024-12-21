@@ -7,12 +7,16 @@
 	"files": [
 		"dist"
 	],
-	"main": "./src/index.mjs",
-	"module": "./src/index.mjs",
+	"scripts": {
+		"stub": "pnpm unbuild --stub"
+	},
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./src/index.mjs",
-			"default": "./src/index.mjs"
+			"import": "./dist/index.mjs",
+			"default": "./dist/index.mjs",
+			"types": "./dist/index.d.ts"
 		}
 	},
 	"dependencies": {
