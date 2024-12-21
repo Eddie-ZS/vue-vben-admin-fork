@@ -12,6 +12,7 @@
 	},
 	"scripts": {
 		"dev": "turbo run dev",
+		"dev:ele": "pnpm -F @vbird/web-element run dev ",
 		"build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 turbo run build",
 		"commit": "czg",
 		"prettier": "prettier --check .",

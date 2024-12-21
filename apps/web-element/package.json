@@ -1,5 +1,5 @@
 {
-	"name": "web-element",
+	"name": "@vbird/web-element",
 	"version": "1.0.0",
 	"description": "",
 	"type": "module",
@@ -10,5 +10,10 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"dependencies": {}
+	"devDependencies": {
+		"@vbird/vite-config": "workspace:*"
+	},
+	"dependencies": {
+		"vue": "3.5.12"
+	}
 }

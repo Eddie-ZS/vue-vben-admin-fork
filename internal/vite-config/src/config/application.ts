@@ -11,9 +11,9 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 	return defineConfig(async (config) => {
 		// 加载用户自定义配置
 		const options = await userConfigPromise?.(config);
-		// 读取环境变量
+		// 读取应用环境变量配置
 		const { base } = await loadAndConvertEnv();
-		// 加载应用插件
+		// 加载应用默认插件
 		const plugins = await loadApplicationPlugins({
 			devtools: true
 		});
@@ -21,7 +21,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 		const applicationConfig: UserConfig = {
 			plugins
 		};
-		// 合并用户配置
+		// 合并用户配置 mergeConfig
 		return applicationConfig;
 	});
 }

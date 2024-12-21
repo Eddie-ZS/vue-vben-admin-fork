@@ -1,7 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
-	<div>
-		<slot />
-	</div>
+	<div>123</div>
 </template>
