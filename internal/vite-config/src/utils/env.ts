@@ -11,7 +11,7 @@ const getBoolean = (value: string | undefined) => value === 'true';
 const getNumber = (value: string | undefined, defaultValue: number) => Number(value) || defaultValue;
 
 /**
- * 获取当前环境下生效的配置文件名
+ * @description 获取当前环境下生效的配置文件名
  */
 function getConfFiles() {
 	const script = process.env.npm_lifecycle_script as string;
@@ -25,11 +25,13 @@ function getConfFiles() {
 }
 
 /**
- * 根据指定前缀获取环境变量
+ * @description 根据指定前缀获取环境变量, 并转换成对象
+ * @param match 匹配的前缀
+ * @param confFiles 配置文件列表
  */
 async function loadEnv<T = Record<string, string>>(match = 'VITE_GLOB_', confFiles = getConfFiles()) {
 	let envConfig = {};
-	for (const confFile in confFiles) {
+	for (const confFile of confFiles) {
 		try {
 			// 获取配置文件路径
 			const confFilePath = join(process.cwd(), confFile);
@@ -57,7 +59,9 @@ async function loadEnv<T = Record<string, string>>(match = 'VITE_GLOB_', confFil
 }
 
 /**
- * 读取环境变量并转换成对象
+ * @description 读取环境变量并转换成对象
+ * @param match 匹配的前缀
+ * @param confFiles 配置文件列表
  */
 async function loadAndConvertEnv(
 	match = 'VITE_',
@@ -70,6 +74,7 @@ async function loadAndConvertEnv(
 	} & Partial<ApplicationPluginOptions>
 > {
 	const envConfig = await loadEnv(match, confFiles);
+
 	const {
 		VITE_APP_TITLE,
 		VITE_ARCHIVER,

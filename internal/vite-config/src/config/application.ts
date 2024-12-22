@@ -1,4 +1,4 @@
-import { defineConfig, type UserConfig } from 'vite';
+import { defineConfig, loadEnv, type UserConfig } from 'vite';
 import type { DefineApplicationOptions } from '../types';
 import { loadApplicationPlugins } from '../plugins';
 import { loadAndConvertEnv } from '../utils/env';
@@ -11,15 +11,31 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 	return defineConfig(async (config) => {
 		// 加载用户自定义配置
 		const options = await userConfigPromise?.(config);
+		// 解构用户配置
+		// const { vite = {}, application = {} } = options || {};
 		// 读取应用环境变量配置
-		const { base } = await loadAndConvertEnv();
+		const { base, port } = await loadAndConvertEnv();
+		const { mode, command } = config;
+		const root = process.cwd();
+		const isBuild = command === 'build';
+		const env = loadEnv(mode, root);
+
 		// 加载应用默认插件
 		const plugins = await loadApplicationPlugins({
-			devtools: true
+			devtools: true,
+			env,
+			isBuild
 		});
 
 		const applicationConfig: UserConfig = {
-			plugins
+			root,
+			base,
+			plugins,
+			server: {
+				host: true,
+				port,
+				open: false
+			}
 		};
 		// 合并用户配置 mergeConfig
 		return applicationConfig;
