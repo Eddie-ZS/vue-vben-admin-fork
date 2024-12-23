@@ -4,16 +4,16 @@
 	"description": "",
 	"type": "module",
 	"scripts": {
-		"dev": "vite --mode development",
-		"build": "vite build"
+		"dev": "cross-env VITE_CJS_TRACE=true vite --mode development",
+		"build": "vite build --mode production"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Eddie",
 	"license": "ISC",
 	"devDependencies": {
 		"@vbird/vite-config": "workspace:*"
 	},
 	"dependencies": {
-		"vue": "3.5.12"
+		"vue": "3.5.13"
 	}
 }

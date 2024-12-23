@@ -22,19 +22,19 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 
 		// 加载应用默认插件
 		const plugins = await loadApplicationPlugins({
-			devtools: true,
+			devtools: false,
 			env,
 			isBuild
 		});
 
 		const applicationConfig: UserConfig = {
-			root,
 			base,
 			plugins,
 			server: {
 				host: true,
 				port,
-				open: false
+				open: false,
+				warmup: {}
 			}
 		};
 		// 合并用户配置 mergeConfig

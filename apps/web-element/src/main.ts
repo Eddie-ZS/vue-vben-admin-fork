@@ -1,5 +1,3 @@
-import App from './App.vue';
-import { createApp } from 'vue';
+console.log('Hello World!');
 
-const app = createApp(App);
-app.mount('#app');
+console.log(import.meta.env);
