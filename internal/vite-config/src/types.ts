@@ -71,6 +71,9 @@ interface ConditionPlugin {
 	plugins: () => PluginOption[] | PromiseLike<PluginOption[]>;
 }
 
+/**
+ * 通用插件配置
+ */
 interface CommonPluginOptions {
 	/** 是否开启devtools */
 	devtools?: boolean;
@@ -86,6 +89,9 @@ interface CommonPluginOptions {
 	visualizer?: boolean | PluginVisualizerOptions;
 }
 
+/**
+ * 应用插件配置
+ */
 interface ApplicationPluginOptions extends CommonPluginOptions {
 	/** 开启后，会在打包dist同级生成dist.zip */
 	archiver?: boolean;
@@ -127,6 +133,9 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
 	vxeTableLazyImport?: boolean;
 }
 
+/**
+ * 库插件配置
+ */
 interface LibraryPluginOptions extends CommonPluginOptions {
 	/** 开启 dts 输出 */
 	dts?: boolean | PluginOptions;
