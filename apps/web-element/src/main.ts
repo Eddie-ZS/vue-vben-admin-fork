@@ -1,3 +1,7 @@
-console.log('Hello World!');
+import { createApp } from 'vue';
 
-console.log(import.meta.env);
+import App from './App.vue';
+
+const app = createApp(App);
+
+app.mount('#app');

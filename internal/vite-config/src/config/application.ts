@@ -23,6 +23,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 		// 加载应用默认插件
 		const plugins = await loadApplicationPlugins({
 			devtools: false,
+			html: true,
 			env,
 			isBuild
 		});
