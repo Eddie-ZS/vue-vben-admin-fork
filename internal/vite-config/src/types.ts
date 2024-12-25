@@ -121,6 +121,8 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
 	nitroMock?: boolean;
 	/** nitro mock 插件配置 */
 	nitroMockOptions?: NitroMockPluginOptions;
+	/** 开启项目构建时间输出 */
+	info?: boolean;
 	/** 开启控制台自定义打印 */
 	print?: boolean;
 	/** 打印插件配置 */

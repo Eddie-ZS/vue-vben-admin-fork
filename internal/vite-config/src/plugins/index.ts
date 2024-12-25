@@ -76,6 +76,7 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		license,
 		nitroMock,
 		nitroMockOptions,
+		info,
 		print,
 		printInfoMap,
 		pwa,
@@ -90,11 +91,22 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		//  i18n 的 locale 消息插件，提高 vue-i18n 的性能 @see https://www.npmjs.com/package/@intlify/unplugin-vue-i18n
 		{
 			condition: i18n,
-			plugins: () => [viteVueI18nPlugin()]
+			plugins: () => [
+				viteVueI18nPlugin({
+					compositionOnly: true,
+					fullInstall: true,
+					runtimeOnly: true
+				})
+			]
 		},
 		// 开启控制台自定义打印插件
 		{
 			condition: print,
+			plugins: () => []
+		},
+		// 开启项目构建时间自定义输出
+		{
+			condition: info,
 			plugins: () => []
 		},
 		// vxetable 按需导入插件
