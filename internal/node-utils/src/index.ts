@@ -17,5 +17,7 @@ export { default as colors } from 'chalk';
 // 基于 promise 的 文件系统
 export { default as fs } from 'node:fs/promises';
 
+export { default as boxen, type Options as BoxenOptions } from 'boxen';
+export { default as gradient } from 'gradient-string';
 export { type PackageJson, readPackageJSON } from 'pkg-types';
 export { rimraf } from 'rimraf';
