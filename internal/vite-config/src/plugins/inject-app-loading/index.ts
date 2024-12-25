@@ -10,7 +10,6 @@ import type { PluginOption } from 'vite';
  * @param isBuild 是否是生产环境
  * @param env
  * @param loadingTemplate loading html模板路径
- * @returns
  */
 async function viteInjectAppLoadingPlugin(
 	isBuild: boolean,

@@ -25,6 +25,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 		const plugins = await loadApplicationPlugins({
 			devtools: true,
 			html: true,
+			injectAppLoading: false,
 			env,
 			isBuild,
 			...application
