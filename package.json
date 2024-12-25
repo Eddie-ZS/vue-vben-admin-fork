@@ -18,7 +18,7 @@
 		"prettier": "prettier --check .",
 		"prepare": "husky",
 		"lint": "eslint .",
-		"clean": "",
+		"clean": "node ./scripts/clean.mjs",
 		"postinstall": "turbo run stub",
 		"reinstall": "pnpm clean --del-lock && pnpm install"
 	},

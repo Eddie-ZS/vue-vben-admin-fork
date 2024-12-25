@@ -4,6 +4,7 @@ export * from './fs';
 export * from './date';
 export * from './git';
 export * from 'execa';
+
 export { add as gitAdd, getStagedFiles } from './git';
 export { generateContentHash } from './hash';
 export { toPosixPath } from './path';
@@ -16,8 +17,9 @@ export { consola } from 'consola';
 export { default as colors } from 'chalk';
 // 基于 promise 的 文件系统
 export { default as fs } from 'node:fs/promises';
-
 export { default as boxen, type Options as BoxenOptions } from 'boxen';
 export { default as gradient } from 'gradient-string';
+export { cristal, teen, mind, morning, vice, passion, fruit, instagram, atlas, retro, summer, pastel, rainbow } from 'gradient-string';
+
 export { type PackageJson, readPackageJSON } from 'pkg-types';
 export { rimraf } from 'rimraf';
