@@ -1,6 +1,7 @@
 // @see https://nodejs.cn/api/fs.html
 import { promises as fs } from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
+import bytes from 'bytes';
 
 /**
  * 异步地将数据写入文件，如果文件已经存在，则替换该文件。
@@ -58,11 +59,23 @@ async function readJSON(filePath: string) {
 }
 
 /**
- * 获取指定文件夹的大小
- * @param folder 文件夹名称
+ * 获取打包后的文件大小
+ * @param options.folder 打包输出目录
+ * @param options.format 是否格式化输出
  */
-async function getPackageSize(folder: string = 'dist') {
-	return;
+async function getPackageSize(options: { folder: string; format?: boolean }) {
+	const { folder = 'dist', format = true } = options || {};
+	const files = await fs.readdir(folder);
+	let totalSize = 0;
+	for (const file of files) {
+		const stats = await fs.stat(join(folder, file));
+		if (stats.isFile()) {
+			totalSize += stats.size;
+		} else if (stats.isDirectory()) {
+			totalSize += await getPackageSize({ folder: join(folder, file), format: false });
+		}
+	}
+	return format ? bytes(totalSize) : totalSize;
 }
 
 export { outputJson, ensureFile, readJSON, getPackageSize };

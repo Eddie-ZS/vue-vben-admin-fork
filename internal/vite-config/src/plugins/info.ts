@@ -1,12 +1,11 @@
 import type { PluginOption } from 'vite';
-import { gradient, boxen, type BoxenOptions } from '@vbird/node-utils';
+import { gradient, boxen, type BoxenOptions, getPackageSize } from '@vbird/node-utils';
 import dayjs, { type Dayjs } from 'dayjs';
 import duration from 'dayjs/plugin/duration';
-import { join } from 'node:path';
 dayjs.extend(duration);
 
 // @see https://reports.org.cn/plugin-using/gradient-string/summary#accepted-string-input
-const useMessage = gradient(['cyan', 'blue']).multiline(`start building the project：${process.env.npm_package_name}`);
+const useMessage = gradient(['cyan', 'blue']).multiline(`🚀 start building the project：${process.env.npm_package_name}`);
 
 // boxen style options
 const boxenOptions: BoxenOptions = {
@@ -27,7 +26,7 @@ async function viteBuildInfo(): Promise<PluginOption> {
 		name: 'vite-plugin:build-info',
 		configResolved(resolvedConfig) {
 			config = resolvedConfig;
-			outputDir = join(process.cwd(), resolvedConfig.build.outDir ?? 'dist');
+			outputDir = resolvedConfig.build.outDir ?? 'dist';
 		},
 		buildStart() {
 			console.log(boxen(useMessage, boxenOptions));
@@ -35,15 +34,21 @@ async function viteBuildInfo(): Promise<PluginOption> {
 				startTime = dayjs(new Date());
 			}
 		},
-		async buildEnd() {
+		async closeBundle() {
 			if (config.command === 'build') {
 				endTime = dayjs(new Date());
+				const size = await getPackageSize({
+					folder: outputDir
+				});
 				console.log(
 					boxen(
 						gradient(['cyan', 'blue']).multiline(
-							`🎉 Construction completed! Consume time:  ${dayjs.duration(endTime.diff(startTime)).format('mm分ss秒')}`
+							`🎉 Construction completed! Consume time:  ${dayjs.duration(endTime.diff(startTime)).format('mm分ss秒')}, size: ${size}`
 						),
-						boxenOptions
+						{
+							...boxenOptions,
+							margin: { top: 1 }
+						}
 					)
 				);
 			}
