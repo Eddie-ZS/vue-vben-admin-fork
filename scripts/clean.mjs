@@ -1,5 +1,4 @@
-import { boxen, gradient, cristal, vice } from '@vbird/node-utils';
-import { readdir, rm, lstat } from 'node:fs/promises';
+import { fs, boxen, gradient, cristal, vice } from '@vbird/node-utils';
 import { join } from 'node:path';
 
 const rootDir = process.cwd();
@@ -18,7 +17,7 @@ const boxenOptions = {
  */
 async function cleanTargetsRecursively(currentDir, targets) {
 	// 先读取当前目录下的所有文件和目录
-	const files = await readdir(currentDir);
+	const files = await fs.readdir(currentDir);
 	// 遍历当前目录下的所有文件和目录
 	for (const file of files) {
 		try {
@@ -26,11 +25,11 @@ async function cleanTargetsRecursively(currentDir, targets) {
 			const filePath = join(currentDir, file);
 			// 如果当前文件或目录是需要删除的目标，则删除
 			if (targets.includes(file)) {
-				await rm(filePath, { force: true, recursive: true });
+				await fs.rm(filePath, { force: true, recursive: true });
 				console.log(cristal(`Delete file or directory: ${filePath}`));
 			}
 			// 如果当前文件或目录是目录，则递归调用本函数
-			const stat = await lstat(filePath);
+			const stat = await fs.lstat(filePath);
 			if (stat.isDirectory()) {
 				await cleanTargetsRecursively(filePath, targets);
 			}

@@ -13,6 +13,7 @@ import type { ApplicationPluginOptions, CommonPluginOptions, LibraryPluginOption
 
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteArchiverPlugin } from './archiver';
+import { viteBuildInfo } from './info';
 
 /**
  * @description 获取条件成立的 vite 插件
@@ -107,7 +108,7 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		// 开启项目构建时间自定义输出
 		{
 			condition: info,
-			plugins: () => []
+			plugins: async () => [await viteBuildInfo()]
 		},
 		// vxetable 按需导入插件
 		{

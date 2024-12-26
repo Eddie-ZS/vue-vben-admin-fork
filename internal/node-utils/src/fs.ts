@@ -57,4 +57,12 @@ async function readJSON(filePath: string) {
 	}
 }
 
-export { outputJson, ensureFile, readJSON };
+/**
+ * 获取指定文件夹的大小
+ * @param folder 文件夹名称
+ */
+async function getPackageSize(folder: string = 'dist') {
+	return;
+}
+
+export { outputJson, ensureFile, readJSON, getPackageSize };
