@@ -14,6 +14,7 @@ import type { ApplicationPluginOptions, CommonPluginOptions, LibraryPluginOption
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteArchiverPlugin } from './archiver';
 import { viteBuildInfo } from './info';
+import { vitePrintPlugin } from './print';
 
 /**
  * @description 获取条件成立的 vite 插件
@@ -103,7 +104,7 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		// 开启控制台自定义打印插件
 		{
 			condition: print,
-			plugins: () => []
+			plugins: async () => [await vitePrintPlugin()]
 		},
 		// 开启项目构建时间自定义输出
 		{

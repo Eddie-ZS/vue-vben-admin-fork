@@ -9,3 +9,5 @@ async function vitePrintPlugin(): Promise<PluginOption> {
 		configureServer(server) {}
 	};
 }
+
+export { vitePrintPlugin };

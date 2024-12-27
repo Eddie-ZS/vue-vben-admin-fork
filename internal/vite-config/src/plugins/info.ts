@@ -29,8 +29,8 @@ async function viteBuildInfo(): Promise<PluginOption> {
 			outputDir = resolvedConfig.build.outDir ?? 'dist';
 		},
 		buildStart() {
-			console.log(boxen(useMessage, boxenOptions));
 			if (config.command === 'build') {
+				console.log(boxen(useMessage, boxenOptions));
 				startTime = dayjs(new Date());
 			}
 		},

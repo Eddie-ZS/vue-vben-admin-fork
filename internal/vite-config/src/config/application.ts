@@ -26,6 +26,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 			devtools: true,
 			html: true,
 			info: true,
+			print: true,
 			injectAppLoading: false,
 			env,
 			isBuild,
