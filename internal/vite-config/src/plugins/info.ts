@@ -5,7 +5,7 @@ import duration from 'dayjs/plugin/duration';
 dayjs.extend(duration);
 
 // @see https://reports.org.cn/plugin-using/gradient-string/summary#accepted-string-input
-const useMessage = gradient(['cyan', 'blue']).multiline(`🚀 start building the project：${process.env.npm_package_name}`);
+const useMessage = gradient(['cyan', 'blue']).multiline(`🚀 Start building the project：${process.env.npm_package_name}`);
 
 // boxen style options
 const boxenOptions: BoxenOptions = {
@@ -43,7 +43,7 @@ async function viteBuildInfo(): Promise<PluginOption> {
 				console.log(
 					boxen(
 						gradient(['cyan', 'blue']).multiline(
-							`🎉 Construction completed! Consume time:  ${dayjs.duration(endTime.diff(startTime)).format('mm分ss秒')}, size: ${size}`
+							`🎉 Construction completed! Consume time:  ${dayjs.duration(endTime.diff(startTime)).format('mm分ss秒')}, Size: ${size}`
 						),
 						{
 							...boxenOptions,

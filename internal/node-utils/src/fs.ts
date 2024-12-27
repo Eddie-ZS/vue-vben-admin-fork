@@ -1,7 +1,7 @@
 // @see https://nodejs.cn/api/fs.html
 import { promises as fs } from 'node:fs';
 import { dirname, join } from 'node:path';
-import bytes from 'bytes';
+import { partial } from 'filesize';
 
 /**
  * 异步地将数据写入文件，如果文件已经存在，则替换该文件。
@@ -65,17 +65,23 @@ async function readJSON(filePath: string) {
  */
 async function getPackageSize(options: { folder: string; format?: boolean }) {
 	const { folder = 'dist', format = true } = options || {};
-	const files = await fs.readdir(folder);
-	let totalSize = 0;
-	for (const file of files) {
-		const stats = await fs.stat(join(folder, file));
-		if (stats.isFile()) {
-			totalSize += stats.size;
-		} else if (stats.isDirectory()) {
-			totalSize += await getPackageSize({ folder: join(folder, file), format: false });
+	const fileListTotal: number[] = [];
+	const computationRecursively = async (folder: string) => {
+		const files = await fs.readdir(folder);
+		for (const file of files) {
+			try {
+				const stats = await fs.stat(join(folder, file));
+				if (stats.isFile()) {
+					fileListTotal.push(stats.size);
+				} else if (stats.isDirectory()) {
+					await computationRecursively(join(folder, file));
+				}
+			} catch {}
 		}
-	}
-	return format ? bytes(totalSize) : totalSize;
+	};
+	await computationRecursively(folder);
+	const size = fileListTotal.reduce((acc, cur) => acc + cur, 0);
+	return format ? partial({ standard: 'jedec' })(size) : size;
 }
 
 export { outputJson, ensureFile, readJSON, getPackageSize };
