@@ -104,7 +104,7 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		// 开启控制台自定义打印插件
 		{
 			condition: print,
-			plugins: async () => [await vitePrintPlugin()]
+			plugins: () => [vitePrintPlugin({ infoMap: printInfoMap })]
 		},
 		// 开启项目构建时间自定义输出
 		{

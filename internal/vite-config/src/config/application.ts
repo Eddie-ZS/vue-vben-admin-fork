@@ -24,10 +24,24 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 		// 加载应用默认插件
 		const plugins = await loadApplicationPlugins({
 			devtools: true,
+			i18n: false,
 			html: true,
 			info: true,
 			print: true,
+			printInfoMap: {
+				'Vben Admin Doc': 'https://doc.vben.pro'
+			},
+			vxeTableLazyImport: false,
+			nitroMock: false,
+			injectMetadata: false,
 			injectAppLoading: false,
+			license: false,
+			pwa: false,
+			importmap: false,
+			extraAppConfig: false,
+			archiver: false,
+			compress: true,
+			visualizer: false,
 			env,
 			isBuild,
 			...application

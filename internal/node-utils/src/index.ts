@@ -18,6 +18,7 @@ export { default as colors } from 'chalk';
 // 基于 promise 的 文件系统
 export { default as fs } from 'node:fs/promises';
 export { default as boxen, type Options as BoxenOptions } from 'boxen';
+// 终端字符串渐变效果
 export { default as gradient } from 'gradient-string';
 export { cristal, teen, mind, morning, vice, passion, fruit, instagram, atlas, retro, summer, pastel, rainbow } from 'gradient-string';
 
