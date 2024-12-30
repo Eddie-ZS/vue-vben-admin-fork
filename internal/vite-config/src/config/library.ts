@@ -12,9 +12,12 @@ function defineLibraryConfig(userConfigPromise?: DefineLibraryOptions) {
 		const options = (await userConfigPromise?.(config)) || {};
 		// 解构用户配置
 		const { vite = {}, library = {} } = options || {};
+		const { command } = config;
+		const isBuild = command === 'build';
 
 		const plugins = await loadLibraryPlugins({
 			dts: true,
+			isBuild,
 			...library
 		});
 
