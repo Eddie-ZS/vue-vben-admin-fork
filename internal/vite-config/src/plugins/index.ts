@@ -15,6 +15,7 @@ import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteArchiverPlugin } from './archiver';
 import { viteBuildInfo } from './info';
 import { vitePrintPlugin } from './print';
+import { viteLicensePlugin } from './license';
 
 /**
  * @description 获取条件成立的 vite 插件
@@ -129,7 +130,7 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		// 是否注入版权信息插件
 		{
 			condition: license,
-			plugins: () => []
+			plugins: async () => [await viteLicensePlugin()]
 		},
 		// pwa 插件 @see https://vite-pwa-org-zh.netlify.app/guide/
 		{

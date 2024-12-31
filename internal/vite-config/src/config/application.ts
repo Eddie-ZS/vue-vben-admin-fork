@@ -35,7 +35,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 			nitroMock: false,
 			injectMetadata: false,
 			injectAppLoading: false,
-			license: false,
+			license: true,
 			pwa: false,
 			importmap: false,
 			extraAppConfig: false,
