@@ -15,7 +15,6 @@ async function viteLicensePlugin(root = process.cwd()): Promise<PluginOption | u
 		enforce: 'post',
 		generateBundle: {
 			handler(_, bundle: OutputBundle) {
-				console.log('Injecting license information...', bundle);
 				// 获取当前时间
 				const date = dateUtil().format('YYYY-MM-DD HH:mm:ss');
 				// 版权信息

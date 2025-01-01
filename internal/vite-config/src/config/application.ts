@@ -33,7 +33,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 			},
 			vxeTableLazyImport: false,
 			nitroMock: false,
-			injectMetadata: false,
+			injectMetadata: true,
 			injectAppLoading: false,
 			license: true,
 			pwa: false,

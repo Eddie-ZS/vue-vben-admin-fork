@@ -16,6 +16,7 @@ import { viteArchiverPlugin } from './archiver';
 import { viteBuildInfo } from './info';
 import { vitePrintPlugin } from './print';
 import { viteLicensePlugin } from './license';
+import { viteInjectMetadataPlugin } from './inject-metadata';
 
 /**
  * @description 获取条件成立的 vite 插件
@@ -49,7 +50,7 @@ async function loadCommonPlugins(options: CommonPluginOptions): Promise<Conditio
 		},
 		{
 			condition: injectMetadata,
-			plugins: async () => []
+			plugins: async () => [await viteInjectMetadataPlugin()]
 		},
 		{
 			condition: isBuild && !!visualizer,
