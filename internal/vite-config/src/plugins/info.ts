@@ -15,7 +15,7 @@ const boxenOptions: BoxenOptions = {
 };
 
 /**
- * 自定义构建信息输出插件
+ * @description 自定义构建信息输出插件
  */
 async function viteBuildInfo(): Promise<PluginOption> {
 	let config: { command: 'build' | 'serve' };

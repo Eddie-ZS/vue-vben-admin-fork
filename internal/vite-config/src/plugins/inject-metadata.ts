@@ -3,7 +3,7 @@ import type { PluginOption } from 'vite';
 import { readWorkspaceManifest } from '@pnpm/workspace.read-manifest';
 
 /**
- *
+ * @description 解析依赖版本
  * @param pkgsMeta 包的元信息
  * @param name 依赖名
  * @param value 依赖协议
@@ -20,7 +20,7 @@ function resolvePackageVersion(pkgsMeta: Record<string, string>, name: string, v
 }
 
 /**
- * 解析monorepo依赖, 获取所有包的依赖信息
+ * @description 解析monorepo依赖, 获取所有包的依赖信息
  */
 async function resolveMonorepoDependencies() {
 	// 获取大仓中的所有包

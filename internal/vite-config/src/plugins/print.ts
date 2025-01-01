@@ -3,7 +3,7 @@ import type { PrintPluginOptions } from '../types';
 import { colors } from '@vbird/node-utils';
 
 /**
- * 自定义启动打印输出插件
+ * @description 自定义启动打印输出插件
  * @param options 配置项
  */
 function vitePrintPlugin(options: PrintPluginOptions = {}): PluginOption {
