@@ -25,10 +25,10 @@ function resolvePackageVersion(pkgsMeta: Record<string, string>, name: string, v
 async function resolveMonorepoDependencies() {
 	// 获取大仓中的所有包
 	const { packages } = await getPackagesAsync();
-	console.log('getPackagesAsync-->', await getPackagesAsync());
+	// console.log('getPackagesAsync-->', await getPackagesAsync());
 	// 读取 pnpm-workspace.yaml 文件内容
 	const manifest = await readWorkspaceManifest(findMonorepoRoot());
-	console.log('manifest --->', manifest);
+	// console.log('manifest --->', manifest);
 	// 获取文件中的 catalog 目录信息 （记录的包名和版本）
 	const catalog = manifest?.catalog || {};
 

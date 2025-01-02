@@ -25,7 +25,9 @@ async function viteBuildInfo(): Promise<PluginOption> {
 	return {
 		name: 'vite-plugin:build-info',
 		configResolved(resolvedConfig) {
+			// 存储最终解析的配置
 			config = resolvedConfig;
+			// 存储输出文件夹
 			outputDir = resolvedConfig.build.outDir ?? 'dist';
 		},
 		buildStart() {
@@ -47,7 +49,7 @@ async function viteBuildInfo(): Promise<PluginOption> {
 						),
 						{
 							...boxenOptions,
-							margin: { top: 1 }
+							margin: { top: 1, bottom: 1 }
 						}
 					)
 				);

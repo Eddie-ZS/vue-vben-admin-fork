@@ -38,7 +38,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 			license: true,
 			pwa: false,
 			importmap: false,
-			extraAppConfig: false,
+			extraAppConfig: true,
 			archiver: false,
 			compress: true,
 			visualizer: false,

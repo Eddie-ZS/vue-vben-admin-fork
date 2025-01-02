@@ -17,6 +17,7 @@ import { viteBuildInfo } from './info';
 import { vitePrintPlugin } from './print';
 import { viteLicensePlugin } from './license';
 import { viteInjectMetadataPlugin } from './inject-metadata';
+import { viteExtraAppConfigPlugin } from './extra-app-config';
 
 /**
  * @description 获取条件成立的 vite 插件
@@ -158,7 +159,7 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		// 构建抽离配置文件插件
 		{
 			condition: isBuild && extraAppConfig,
-			plugins: async () => []
+			plugins: async () => [await viteExtraAppConfigPlugin()]
 		},
 		// 文件压缩插件
 		{
