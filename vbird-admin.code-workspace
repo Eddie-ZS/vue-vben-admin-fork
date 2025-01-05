@@ -31,6 +31,22 @@
 		{
 			"name": "@vbird/vite-config",
 			"path": "internal/vite-config"
+		},
+		{
+			"name": "@vbird-core/design",
+			"path": "packages/core/design"
+		},
+		{
+			"name": "@vbird-core/icons",
+			"path": "packages/core/icons"
+		},
+		{
+			"name": "@vbird-core/shared",
+			"path": "packages/core/shared"
+		},
+		{
+			"name": "@vbird-core/typings",
+			"path": "packages/core/typings"
 		}
 	]
 }

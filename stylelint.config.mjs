@@ -1,2 +1,4 @@
-// @ts-nocheck: not type check
-export { default } from '@vbird/stylelint-config';
+export default {
+	extends: ['@vbird/stylelint-config'],
+	root: true
+};
