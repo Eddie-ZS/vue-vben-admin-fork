@@ -72,23 +72,23 @@
 		}
 	},
 	"dependencies": {
-		"@ctrl/tinycolor": "4.1.0",
-		"@tanstack/vue-store": "0.7.0",
-		"@vue/shared": "3.5.13",
-		"clsx": "2.1.1",
-		"dayjs": "1.11.13",
-		"defu": "6.1.4",
-		"lodash.clonedeep": "4.5.0",
-		"lodash.get": "4.4.2",
-		"lodash.isequal": "4.5.0",
-		"nprogress": "0.2.0",
-		"tailwind-merge": "2.6.0",
-		"theme-colors": "0.1.0"
+		"@ctrl/tinycolor": "catalog:",
+		"@tanstack/vue-store": "catalog:",
+		"@vue/shared": "catalog:",
+		"clsx": "catalog:",
+		"dayjs": "catalog:",
+		"defu": "catalog:",
+		"lodash.clonedeep": "catalog:",
+		"lodash.get": "catalog:",
+		"lodash.isequal": "catalog:",
+		"nprogress": "catalog:",
+		"tailwind-merge": "catalog:",
+		"theme-colors": "catalog:"
 	},
 	"devDependencies": {
-		"@types/lodash.clonedeep": "4.5.9",
-		"@types/lodash.get": "4.4.9",
-		"@types/lodash.isequal": "4.5.8",
-		"@types/nprogress": "0.2.3"
+		"@types/lodash.clonedeep": "catalog:",
+		"@types/lodash.get": "catalog:",
+		"@types/lodash.isequal": "catalog:",
+		"@types/nprogress": "catalog:"
 	}
 }
