@@ -20,6 +20,7 @@
 		"prepare": "husky",
 		"lint": "eslint .",
 		"clean": "node ./scripts/clean.mjs",
+		"postinstall": "turbo run stub",
 		"reinstall": "pnpm clean --del-lock && pnpm install"
 	},
 	"devDependencies": {
@@ -31,6 +32,7 @@
 		"@vbird/node-utils": "workspace:*",
 		"@vbird/prettier-config": "workspace:*",
 		"@vbird/stylelint-config": "workspace:*",
+		"@vbird/tailwind-config": "workspace:*",
 		"@vbird/tsconfig": "workspace:*",
 		"@vbird/vite-config": "workspace:*",
 		"@vitejs/plugin-vue": "catalog:",

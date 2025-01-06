@@ -2,8 +2,9 @@ packages:
   - apps/*
   - scripts/*
   - packages/*
-  - packages/@core/base/*
   - packages/@core/*
+  - packages/@core/base/*
+  - packages/@core/ui-kit/*
   - internal/*
   - internal/lint-configs/*
 catalog:
@@ -14,11 +15,15 @@ catalog:
   "@commitlint/config-conventional": 19.5.0
   "@ctrl/tinycolor": 4.1.0
   "@eslint/js": 9.14.0
+  "@iconify/json": ^2.2.290
+  "@iconify/tailwind": ^1.2.0
   "@iconify/vue": 4.3.0
   "@intlify/unplugin-vue-i18n": 6.0.2
-  "@manypkg/get-packages": 2.2.2
+  "@manypkg/get-packages": ^2.2.2
   "@pnpm/workspace.read-manifest": 1000.0.1
   "@stylistic/stylelint-plugin": 3.1.1
+  "@tailwindcss/nesting": 0.0.0-insiders.565cd3e
+  "@tailwindcss/typography": ^0.5.15
   "@tanstack/vue-store": 0.7.0
   "@types/archiver": 6.0.3
   "@types/html-minifier-terser": 7.0.2
@@ -27,7 +32,9 @@ catalog:
   "@types/lodash.isequal": 4.5.8
   "@types/node": ^22.10.5
   "@types/nprogress": 0.2.3
+  "@types/postcss-import": ^14.0.3
   "@types/sortablejs": 1.15.8
+  "@vee-validate/zod": ^4.15.0
   "@vitejs/plugin-vue": ^5.2.1
   "@vitejs/plugin-vue-jsx": ^4.1.1
   "@vue/shared": 3.5.13
@@ -37,11 +44,13 @@ catalog:
   boxen: 8.0.1
   chalk: 5.3.0
   cheerio: 1.0.0
+  class-variance-authority: ^0.7.1
   clsx: 2.1.1
   commitlint-plugin-function-rules: 4.0.1
   consola: 3.2.3
   cross-env: ^7.0.3
   cspell: ^8.17.1
+  cssnano: ^7.0.6
   cz-git: 1.11.0
   czg: 1.11.0
   dayjs: 1.11.13
@@ -64,16 +73,19 @@ catalog:
   lodash.clonedeep: 4.5.0
   lodash.get: 4.4.2
   lodash.isequal: 4.5.0
-  lucide-vue-next: 0.469.0
+  lucide-vue-next: ^0.469.0
   nitropack: 2.10.4
   nprogress: 0.2.0
   ora: 8.1.1
   pkg-types: 1.2.1
-  postcss: 8.4.49
+  postcss: ^8.4.49
+  postcss-antd-fixes: ^0.2.0
   postcss-html: 1.7.0
+  postcss-import: ^16.1.0
+  postcss-preset-env: ^10.1.3
   postcss-scss: 4.0.9
   prettier: 3.3.3
-  radix-vue: 1.9.12
+  radix-vue: ^1.9.12
   resolve.exports: 2.0.3
   rimraf: ^6.0.1
   rollup: 4.28.1
@@ -91,11 +103,13 @@ catalog:
   stylelint-scss: 6.9.0
   tailwind-merge: 2.6.0
   tailwindcss: ^3.4.17
+  tailwindcss-animate: ^1.0.7
   theme-colors: 0.1.0
   turbo: 2.3.3
   typescript: ^5.7.2
   typescript-eslint: 8.13.0
   unbuild: ^3.2.0
+  vee-validate: ^4.15.0
   vite: ^6.0.5
   vite-plugin-compression: 0.5.1
   vite-plugin-dts: 4.3.0
@@ -108,3 +122,5 @@ catalog:
   vue-eslint-parser: 9.4.3
   vue-router: 4.5.0
   vue-tsc: ^2.2.0
+  zod: ^3.24.1
+  zod-defaults: ^0.1.3

@@ -1,0 +1,47 @@
+{
+	"name": "@vbird-core/shadcn-ui",
+	"version": "1.0.0",
+	"#main": "./dist/index.mjs",
+	"#module": "./dist/index.mjs",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"#build": "pnpm unbuild",
+		"#prepublishOnly": "npm run build"
+	},
+	"files": [
+		"dist"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"main": "./src/index.ts",
+	"module": "./src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"development": "./src/index.ts",
+			"default": "./src/index.ts",
+			"//default": "./dist/index.mjs"
+		}
+	},
+	"publishConfig": {
+		"exports": {
+			".": {
+				"default": "./src/index.ts"
+			}
+		}
+	},
+	"dependencies": {
+		"@vbird-core/composables": "workspace:*",
+		"@vbird-core/icons": "workspace:*",
+		"@vbird-core/shared": "workspace:*",
+		"@vbird-core/typings": "workspace:*",
+		"@vueuse/core": "catalog:",
+		"class-variance-authority": "catalog:",
+		"lucide-vue-next": "catalog:",
+		"radix-vue": "catalog:",
+		"vee-validate": "catalog:",
+		"vue": "catalog:"
+	}
+}

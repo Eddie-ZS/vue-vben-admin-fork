@@ -21,6 +21,10 @@
 			"path": "internal/lint-configs/stylelint-config"
 		},
 		{
+			"name": "@vbird/tailwind-config",
+			"path": "internal/tailwind-config"
+		},
+		{
 			"name": "@vbird/node-utils",
 			"path": "internal/node-utils"
 		},
@@ -47,6 +51,38 @@
 		{
 			"name": "@vbird-core/typings",
 			"path": "packages/core/typings"
+		},
+		{
+			"name": "@vbird-core/composables",
+			"path": "packages/core/composables"
+		},
+		{
+			"name": "@vbird-core/preferences",
+			"path": "packages/core/preferences"
+		},
+		{
+			"name": "@vbird-core/form-ui",
+			"path": "packages/core/ui-kit/form-ui"
+		},
+		{
+			"name": "@vbird-core/layout-ui",
+			"path": "packages/core/ui-kit/layout-ui"
+		},
+		{
+			"name": "@vbird-core/menu-ui",
+			"path": "packages/core/ui-kit/menu-ui"
+		},
+		{
+			"name": "@vbird-core/popup-ui",
+			"path": "packages/core/ui-kit/popup-ui"
+		},
+		{
+			"name": "@vbird-core/shadcn-ui",
+			"path": "packages/core/ui-kit/shadcn-ui"
+		},
+		{
+			"name": "@vbird-core/tabs-ui",
+			"path": "packages/core/ui-kit/tabs-ui"
 		}
 	]
 }

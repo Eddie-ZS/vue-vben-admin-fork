@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@vbird/tsconfig/web-pkg.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@vbird-core/shadcn-ui/*": ["./src/*"]
+		}
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
+}
