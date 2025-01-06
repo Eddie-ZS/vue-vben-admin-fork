@@ -26,5 +26,9 @@
 			}
 		}
 	},
-	"dependencies": {}
+	"dependencies": {
+		"@iconify/vue": "4.3.0",
+		"lucide-vue-next": "0.469.0",
+		"vue": "3.5.13"
+	}
 }
