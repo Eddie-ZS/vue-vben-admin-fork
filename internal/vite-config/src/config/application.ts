@@ -29,7 +29,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 			info: true,
 			print: true,
 			printInfoMap: {
-				'Vben Admin Doc': 'https://doc.vben.pro'
+				'Vbird Admin Doc': 'https://doc.vben.pro'
 			},
 			vxeTableLazyImport: false,
 			nitroMock: false,
