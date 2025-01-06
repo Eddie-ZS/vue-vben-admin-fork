@@ -12,6 +12,7 @@ interface Props extends TabsProps {}
 
 defineOptions({
 	name: 'VbirdTabs',
+	// // eslint-disable-next-line perfectionist/sort-objects
 	inheritAttrs: false
 });
 const props = withDefaults(defineProps<Props>(), {
