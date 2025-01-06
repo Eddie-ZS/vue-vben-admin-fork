@@ -1,6 +1,6 @@
 {
 	"name": "@vbird-core/popup-ui",
-	"version": "5.2.1",
+	"version": "1.0.0",
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
