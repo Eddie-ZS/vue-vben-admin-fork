@@ -44,6 +44,8 @@ export async function javascript(): Promise<Linter.Config[]> {
 
 				'no-const-assign': 'error', // 禁止修改const声明的变量
 				'no-var': 'error', // 禁止使用var声明变量
+				'no-undef': 'off',
+				'no-undef-init': 'error',
 				'no-empty': ['error', { allowEmptyCatch: true }],
 				'no-empty-character-class': 'error',
 				'no-empty-function': 'off',
