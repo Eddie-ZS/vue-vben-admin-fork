@@ -15,12 +15,10 @@
 			"default": "./src/index.mjs"
 		}
 	},
-	"dependencies": {
+	"devDependencies": {
 		"@stylistic/stylelint-plugin": "catalog:",
 		"stylelint-config-recess-order": "catalog:",
-		"stylelint-scss": "catalog:"
-	},
-	"devDependencies": {
+		"stylelint-scss": "catalog:",
 		"postcss": "catalog:",
 		"postcss-html": "catalog:",
 		"postcss-scss": "catalog:",
