@@ -14,7 +14,7 @@ export default {
 				'selector-pseudo-class-no-unknown': [
 					true,
 					{
-						ignorePseudoClasses: ['global', 'deep', 'export']
+						ignorePseudoClasses: ['global', 'deep']
 					}
 				],
 				// 禁用未知伪元素
@@ -29,7 +29,7 @@ export default {
 		{
 			files: ['*.scss', '**/*.scss'],
 			customSyntax: 'postcss-scss',
-			plugins: ['stylelint-config-recommended-scss', 'stylelint-config-recommended-vue/scss']
+			extends: ['stylelint-config-recommended-scss', 'stylelint-config-recommended-vue/scss']
 		}
 	],
 	plugins: ['stylelint-order', '@stylistic/stylelint-plugin', 'stylelint-prettier', 'stylelint-scss'],
