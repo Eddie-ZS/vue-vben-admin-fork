@@ -1,0 +1,34 @@
+{
+	"name": "@vbird/common-ui",
+	"version": "1.0.0",
+	"license": "MIT",
+	"type": "module",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"default": "./src/index.ts"
+		}
+	},
+	"dependencies": {
+		"@vbird-core/form-ui": "workspace:*",
+		"@vbird-core/popup-ui": "workspace:*",
+		"@vbird-core/shadcn-ui": "workspace:*",
+		"@vbird-core/shared": "workspace:*",
+		"@vbird/constants": "workspace:*",
+		"@vbird/hooks": "workspace:*",
+		"@vbird/icons": "workspace:*",
+		"@vbird/locales": "workspace:*",
+		"@vbird/types": "workspace:*",
+		"@vueuse/core": "catalog:",
+		"@vueuse/integrations": "catalog:",
+		"qrcode": "catalog:",
+		"vue": "catalog:",
+		"vue-router": "catalog:"
+	},
+	"devDependencies": {
+		"@types/qrcode": "catalog:"
+	}
+}

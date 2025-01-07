@@ -1,0 +1,35 @@
+{
+	"name": "@vbird/plugins",
+	"version": "1.0.0",
+	"license": "MIT",
+	"type": "module",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		"./echarts": {
+			"types": "./src/echarts/index.ts",
+			"default": "./src/echarts/index.ts"
+		},
+		"./vxe-table": {
+			"types": "./src/vxe-table/index.ts",
+			"default": "./src/vxe-table/index.ts"
+		}
+	},
+	"dependencies": {
+		"@vbird-core/form-ui": "workspace:*",
+		"@vbird-core/shadcn-ui": "workspace:*",
+		"@vbird-core/shared": "workspace:*",
+		"@vbird/hooks": "workspace:*",
+		"@vbird/icons": "workspace:*",
+		"@vbird/locales": "workspace:*",
+		"@vbird/preferences": "workspace:*",
+		"@vbird/types": "workspace:*",
+		"@vbird/utils": "workspace:*",
+		"@vueuse/core": "catalog:",
+		"echarts": "catalog:",
+		"vue": "catalog:",
+		"vxe-pc-ui": "catalog:",
+		"vxe-table": "catalog:"
+	}
+}

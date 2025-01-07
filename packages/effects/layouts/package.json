@@ -1,0 +1,36 @@
+{
+	"name": "@vbird/layouts",
+	"version": "1.0.0",
+	"license": "MIT",
+	"type": "module",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"default": "./src/index.ts"
+		}
+	},
+	"dependencies": {
+		"@vbird-core/composables": "workspace:*",
+		"@vbird-core/form-ui": "workspace:*",
+		"@vbird-core/layout-ui": "workspace:*",
+		"@vbird-core/menu-ui": "workspace:*",
+		"@vbird-core/popup-ui": "workspace:*",
+		"@vbird-core/shadcn-ui": "workspace:*",
+		"@vbird-core/shared": "workspace:*",
+		"@vbird-core/tabs-ui": "workspace:*",
+		"@vbird/constants": "workspace:*",
+		"@vbird/hooks": "workspace:*",
+		"@vbird/icons": "workspace:*",
+		"@vbird/locales": "workspace:*",
+		"@vbird/preferences": "workspace:*",
+		"@vbird/stores": "workspace:*",
+		"@vbird/types": "workspace:*",
+		"@vbird/utils": "workspace:*",
+		"@vueuse/core": "catalog:",
+		"vue": "catalog:",
+		"vue-router": "catalog:"
+	}
+}

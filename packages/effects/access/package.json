@@ -1,0 +1,22 @@
+{
+	"name": "@vbird/access",
+	"version": "1.0.0",
+	"license": "MIT",
+	"type": "module",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"default": "./src/index.ts"
+		}
+	},
+	"dependencies": {
+		"@vbird/preferences": "workspace:*",
+		"@vbird/stores": "workspace:*",
+		"@vbird/types": "workspace:*",
+		"@vbird/utils": "workspace:*",
+		"vue": "catalog:"
+	}
+}

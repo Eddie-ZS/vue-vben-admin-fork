@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@vbird/tsconfig/web-pkg.json",
+	"compilerOptions": {
+		"types": ["vite/client", "@vbird/types/global"]
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
+}
