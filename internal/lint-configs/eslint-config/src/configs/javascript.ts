@@ -1,9 +1,9 @@
 import type { Linter } from 'eslint';
 
-import globals from 'globals';
 import js from '@eslint/js';
 // 查找并删除未使用的 es6 模块导入
 import pluginUnusedImports from 'eslint-plugin-unused-imports';
+import globals from 'globals';
 
 export async function javascript(): Promise<Linter.Config[]> {
 	return [
@@ -35,25 +35,18 @@ export async function javascript(): Promise<Linter.Config[]> {
 			},
 			rules: {
 				...js.configs.recommended.rules,
-				'accessor-pairs': ['error', { setWithoutGet: true, enforceForClassMembers: true }], // 强制getter/setter成对出现
-				'block-scoped-var': 'error',
+				'accessor-pairs': ['error', { enforceForClassMembers: true, setWithoutGet: true }], // 强制getter/setter成对出现
 				'array-callback-return': 'error', // 强制数组方法的回调函数中有return语句
+				'block-scoped-var': 'error',
 				'default-case-last': 'error', // switch语句中default的位置应该放在最后
 				eqeqeq: 'error', // 要求使用全等
 				'new-cap': ['error', { capIsNew: false, newIsCap: true, properties: true }],
 
 				'no-const-assign': 'error', // 禁止修改const声明的变量
-				'no-var': 'error', // 禁止使用var声明变量
-				'no-undef': 'off',
-				'no-undef-init': 'error',
 				'no-empty': ['error', { allowEmptyCatch: true }],
 				'no-empty-character-class': 'error',
 				'no-empty-function': 'off',
 				'no-empty-pattern': 'error',
-				// 'no-restricted-globals': [
-				//   'error',
-				// ],
-
 				'no-restricted-properties': [
 					'error',
 					{
@@ -78,6 +71,12 @@ export async function javascript(): Promise<Linter.Config[]> {
 						property: '__lookupSetter__'
 					}
 				],
+				'no-undef': 'off',
+				'no-undef-init': 'error',
+				// 'no-restricted-globals': [
+				//   'error',
+				// ],
+
 				'no-unused-expressions': [
 					'error',
 					{
@@ -86,6 +85,7 @@ export async function javascript(): Promise<Linter.Config[]> {
 						allowTernary: true
 					}
 				],
+				// js 中 未使用的变量 规则
 				'no-unused-vars': [
 					'warn',
 					{
@@ -97,6 +97,7 @@ export async function javascript(): Promise<Linter.Config[]> {
 					}
 				],
 				'no-use-before-define': ['error', { classes: false, functions: false, variables: true }],
+				'no-var': 'error', // 禁止使用var声明变量
 				'no-with': 'error',
 				'object-shorthand': ['error', 'always', { avoidQuotes: true, ignoreConstructors: false }],
 				'prefer-arrow-callback': [
@@ -113,11 +114,14 @@ export async function javascript(): Promise<Linter.Config[]> {
 						ignoreReadBeforeAssign: true
 					}
 				],
+				// eslint-plugin-unused-imports 插件 的 规则
 				'unused-imports/no-unused-imports': 'error',
 				'unused-imports/no-unused-vars': [
 					'warn',
 					{
+						args: 'after-used',
 						argsIgnorePattern: '^_',
+						vars: 'all',
 						varsIgnorePattern: '^_'
 					}
 				]

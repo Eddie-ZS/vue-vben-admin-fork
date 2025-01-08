@@ -6,9 +6,6 @@ export async function typescript() {
 
 	return tsEslint.config({
 		files: ['**/*.?([cm])[jt]s?(x)'],
-		plugins: {
-			'@typescript-eslint': tsEslint.plugin // 启用 @typescript-eslint 规则
-		},
 		languageOptions: {
 			parser: tsEslint.parser, // 指定解析器
 			parserOptions: {
@@ -24,6 +21,9 @@ export async function typescript() {
 				sourceType: 'module' // 指定源码的类型为模块
 			}
 		},
+		plugins: {
+			'@typescript-eslint': tsEslint.plugin // 启用 @typescript-eslint 规则
+		},
 		rules: {
 			...tsEslint.configs.eslintRecommended.rules, // 启用 eslint 推荐的规则
 			// @see https://typescript-eslint.io/rules/ban-ts-comment/
@@ -37,6 +37,7 @@ export async function typescript() {
 				}
 			],
 			'@typescript-eslint/consistent-type-definitions': 'off', // 允许使用 interface 和 type 定义
+			'@typescript-eslint/consistent-type-imports': ['error', { disallowTypeAnnotations: false, fixStyle: 'inline-type-imports' }],
 			'@typescript-eslint/explicit-function-return-type': 'off', // 要求对函数和类方法进行显式返回类型
 			'@typescript-eslint/explicit-module-boundary-types': 'off', // 要求在导出的函数和类的公共类方法上显式返回和参数类型
 			'@typescript-eslint/no-empty-function': [
@@ -48,7 +49,6 @@ export async function typescript() {
 			'@typescript-eslint/no-explicit-any': 'off', // 允许 any 类型
 			'@typescript-eslint/no-namespace': 'off',
 			'@typescript-eslint/no-unused-expressions': 'off',
-			'@typescript-eslint/consistent-type-imports': ['error', { disallowTypeAnnotations: false, fixStyle: 'inline-type-imports' }],
 			'@typescript-eslint/no-unused-vars': [
 				'warn',
 				// 可以自定义始终允许豁免的名称
@@ -58,8 +58,7 @@ export async function typescript() {
 				}
 			],
 			'@typescript-eslint/no-use-before-define': 'off',
-			'@typescript-eslint/no-var-requires': 'error',
-			'unused-imports/no-unused-vars': 'off' // 关闭 unused-imports/no-unused-vars 规则
+			'@typescript-eslint/no-var-requires': 'error'
 		}
 	});
 }

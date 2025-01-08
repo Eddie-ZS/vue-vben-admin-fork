@@ -1,7 +1,26 @@
 import type { Linter } from 'eslint';
 import type { Config as TsFlagConfig } from 'typescript-eslint';
 
-import { ignores, prettier, vue, javascript, typescript } from './configs';
+import {
+	command,
+	comments,
+	disabled,
+	ignores,
+	importX,
+	javascript,
+	jsdoc,
+	jsonc,
+	node,
+	perfectionist,
+	prettier,
+	regexp,
+	test,
+	turbo,
+	typescript,
+	unicorn,
+	vue
+} from './configs';
+import { customConfig } from './custom-config';
 
 // 定义 eslint 默认配置类型
 type FlatConfig = Linter.Config;
@@ -10,18 +29,30 @@ type FlatConfigPromise = FlatConfig[] | Promise<FlatConfig[]> | TsFlagConfig;
 
 /**
  *
- * @param config eslint 自定义配置
+ * @param config eslint 规则配置
  * @returns
  */
 async function defineConfig(config: FlatConfig[] = []) {
 	const configs: FlatConfigPromise[] = [
-		// 自定义配置
 		ignores(),
 		javascript(),
 		vue(),
 		typescript(),
 		prettier(),
-		config
+		jsonc(),
+		disabled(),
+		importX(),
+		node(),
+		perfectionist(),
+		comments(),
+		jsdoc(),
+		unicorn(),
+		test(),
+		regexp(),
+		command(),
+		turbo(),
+		config,
+		customConfig
 	];
 
 	const resolvedConfig = await Promise.all(configs);
