@@ -63,10 +63,22 @@ catalog:
   defu: 6.1.4
   dotenv: 16.4.7
   echarts: ^5.6.0
-  eslint: 9.14.0
+  eslint: 9.17.0
+  eslint-config-turbo: ^2.3.3
+  eslint-plugin-command: ^0.2.7
+  eslint-plugin-eslint-comments: ^3.2.0
+  eslint-plugin-import-x: ^4.6.1
+  eslint-plugin-jsdoc: ^50.6.1
+  eslint-plugin-jsonc: ^2.18.2
+  eslint-plugin-n: ^17.15.1
+  eslint-plugin-no-only-tests: ^3.3.0
+  eslint-plugin-perfectionist: ^4.4.0
   eslint-config-prettier: 9.1.0
   eslint-plugin-prettier: 5.2.1
+  eslint-plugin-regexp: ^2.7.0
+  eslint-plugin-unicorn: ^56.0.1
   eslint-plugin-unused-imports: 4.1.4
+  eslint-plugin-vitest: ^0.5.4
   eslint-plugin-vue: 9.30.0
   execa: 9.5.1
   filesize: 10.1.6
@@ -76,6 +88,7 @@ catalog:
   gradient-string: 3.0.0
   html-minifier-terser: 7.2.0
   husky: 9.1.7
+  jsonc-eslint-parser: ^2.4.0
   lint-staged: ^15.3.0
   lodash.clonedeep: 4.5.0
   lodash.get: 4.4.2
