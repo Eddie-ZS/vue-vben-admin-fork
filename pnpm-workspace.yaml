@@ -21,7 +21,7 @@ catalog:
   '@iconify/tailwind': ^1.2.0
   '@iconify/vue': 4.3.0
   '@intlify/core-base': ^11.0.1
-  '@intlify/unplugin-vue-i18n': 6.0.2
+  '@intlify/unplugin-vue-i18n': 6.0.3
   '@manypkg/get-packages': ^2.2.2
   '@pnpm/workspace.read-manifest': 1000.0.1
   '@stylistic/stylelint-plugin': 3.1.1
