@@ -16,6 +16,7 @@ export async function perfectionist(): Promise<Linter.Config[]> {
 					'error',
 					{
 						order: 'asc',
+						// 按自然顺序对项目进行排序（例如，“item2” < “item10”）
 						type: 'natural'
 					}
 				],

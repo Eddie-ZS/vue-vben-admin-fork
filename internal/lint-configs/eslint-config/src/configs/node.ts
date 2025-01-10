@@ -17,7 +17,15 @@ export async function node(): Promise<Linter.Config[]> {
 				'n/no-extraneous-import': [
 					'error',
 					{
-						allowModules: ['unbuild', '@vben/vite-config', 'vitest', 'vite', '@vue/test-utils', '@vben/tailwind-config', '@playwright/test']
+						allowModules: [
+							'unbuild',
+							'@vbird/vite-config',
+							'vitest',
+							'vite',
+							'@vue/test-utils',
+							'@vbird/tailwind-config',
+							'@playwright/test'
+						]
 					}
 				],
 				'n/no-new-require': 'error',

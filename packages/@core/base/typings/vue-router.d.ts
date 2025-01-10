@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-imports */
 import type { RouteMeta as IRouteMeta } from '@vbird-core/typings';
 
 import 'vue-router';

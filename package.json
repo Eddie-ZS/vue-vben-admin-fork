@@ -5,11 +5,11 @@
 	"keywords": [
 		"vue"
 	],
-	"type": "module",
 	"license": "MIT",
 	"author": {
 		"name": "Eddie"
 	},
+	"type": "module",
 	"scripts": {
 		"dev": "turbo run dev",
 		"dev:ele": "pnpm -F @vbird/web-element run dev",
@@ -35,6 +35,7 @@
 		"@vbird/tailwind-config": "workspace:*",
 		"@vbird/tsconfig": "workspace:*",
 		"@vbird/vite-config": "workspace:*",
+		"@vbird/vsh": "workspace:*",
 		"@vitejs/plugin-vue": "catalog:",
 		"@vitejs/plugin-vue-jsx": "catalog:",
 		"autoprefixer": "catalog:",
