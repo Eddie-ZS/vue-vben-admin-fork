@@ -2,7 +2,6 @@ export type Awaitable<T> = Promise<T> | T;
 
 /**
  * @param im 动态导入的模块
- * @returns
  */
 export async function inferOpDefault<T>(
 	im: Awaitable<T> // 动态导入的模块

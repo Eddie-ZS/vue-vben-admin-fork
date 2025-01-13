@@ -11,13 +11,13 @@ export async function vue() {
 		languageOptions: {
 			parser: parserVue,
 			parserOptions: {
-				/** typescript项目需要用到这个 */
-				parser: tsEslint.parser,
-				ecmaVersion: 'latest',
-				extraFileExtensions: ['.vue'],
 				ecmaFeatures: {
 					jsx: true
 				},
+				ecmaVersion: 'latest',
+				extraFileExtensions: ['.vue'],
+				/** typescript项目需要用到这个 */
+				parser: tsEslint.parser,
 				sourceType: 'module'
 			}
 		},
@@ -30,12 +30,7 @@ export async function vue() {
 			...pluginVue.configs['vue3-essential'].rules,
 			...pluginVue.configs['vue3-strongly-recommended'].rules,
 			...pluginVue.configs['vue3-recommended'].rules,
-			'vue/no-mutating-props': [
-				'error',
-				{
-					shallowOnly: true
-				}
-			],
+			'vue/attributes-order': 'off', // 标签属性顺序不强制要求
 			// 块的顺序
 			'vue/block-order': [
 				'error',
@@ -43,61 +38,60 @@ export async function vue() {
 					order: ['script', 'template', 'style']
 				}
 			],
+			'vue/component-name-in-template-casing': ['error', 'PascalCase'], // 模板中的组件名称必须使用PascalCase命名法
+			'vue/component-options-name-casing': ['error', 'PascalCase'], // 组件选项名称必须使用PascalCase命名法
+			'vue/custom-event-name-casing': ['error', 'camelCase'], // 自定义事件名称必须使用驼峰命名法
+			// 定义的宏的顺序
+			'vue/define-macros-order': [
+				'error',
+				{
+					order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots']
+				}
+			],
+			'vue/eqeqeq': ['error', 'smart'], // 必须使用全等
 			// 标签的第一个属性必须另起一行
 			'vue/first-attribute-linebreak': [
 				'error',
 				{
-					singleline: 'ignore', // 单行标签的第一个属性不允许另起一行
-					multiline: 'below' // 多行标签的第一个属性必须另起一行
+					multiline: 'below', // 多行标签的第一个属性必须另起一行
+					singleline: 'ignore' // 单行标签的第一个属性不允许另起一行
 				}
 			],
 			// 标签的右括号前使用换行符
 			'vue/html-closing-bracket-newline': [
 				'error',
 				{
-					singleline: 'never', // 单行标签的右括号前不允许有换行符
 					multiline: 'never', // 多行标签的右括号前不允许有换行符
 					selfClosingTag: {
-						singleline: 'never', // 自闭合标签的右括号前不允许有换行符
-						multiline: 'never' // 自闭合标签的右括号前不允许有换行符
-					}
+						multiline: 'never', // 自闭合标签的右括号前不允许有换行符
+						singleline: 'never' // 自闭合标签的右括号前不允许有换行符
+					},
+					singleline: 'never' // 单行标签的右括号前不允许有换行符
 				}
 			],
 			// 标签的右括号前使用空格规则
 			'vue/html-closing-bracket-spacing': [
 				'error',
 				{
-					startTag: 'never', // 开始标签的右括号前不允许有空格
 					endTag: 'never', // 结束标签的右括号前不允许有空格
-					selfClosingTag: 'always' // 自闭合标签的右括号前必须有空格
+					selfClosingTag: 'always', // 自闭合标签的右括号前必须有空格
+					startTag: 'never' // 开始标签的右括号前不允许有空格
 				}
 			],
-			'vue/attributes-order': 'off', // 标签属性顺序不强制要求
 			'vue/html-end-tags': 'error', // 标签必须正确闭合
-			'vue/eqeqeq': ['error', 'smart'], // 必须使用全等
 			'vue/html-indent': ['error', 2], // 标签缩进必须为2个空格
 			'vue/html-quotes': ['error', 'double'], // 标签属性值使用双引号
-			'vue/component-name-in-template-casing': ['error', 'PascalCase'], // 模板中的组件名称必须使用PascalCase命名法
-			'vue/component-options-name-casing': ['error', 'PascalCase'], // 组件选项名称必须使用PascalCase命名法
-			'vue/custom-event-name-casing': ['error', 'camelCase'], // 自定义事件名称必须使用驼峰命名法
 			// 使用自闭合样式
 			'vue/html-self-closing': [
 				'error',
 				{
 					html: {
-						void: 'always', // 无内容元素必须自闭合
+						component: 'always', // 组件元素必须自闭合
 						normal: 'never', // 正常元素必须自闭合
-						component: 'always' // 组件元素必须自闭合
+						void: 'always' // 无内容元素必须自闭合
 					},
-					svg: 'always',
-					math: 'always'
-				}
-			],
-			// 定义的宏的顺序
-			'vue/define-macros-order': [
-				'error',
-				{
-					order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots']
+					math: 'always',
+					svg: 'always'
 				}
 			],
 			'vue/max-attributes-per-line': 'off', // 单行标签属性数量不限制
@@ -107,6 +101,12 @@ export async function vue() {
 			'vue/no-extra-parens': ['error', 'functions'], // 禁止多余的括号
 			'vue/no-irregular-whitespace': 'error', // 禁止不规则的空白符
 			'vue/no-loss-of-precision': 'error', // 禁止数字丢失精度
+			'vue/no-mutating-props': [
+				'error',
+				{
+					shallowOnly: true
+				}
+			],
 			'vue/no-reserved-component-names': 'off', // 禁止使用保留字命名组件
 			// 禁止使用特定语法
 			'vue/no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],

@@ -1,9 +1,11 @@
+import type { PluginOption } from 'vite';
+
 import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 import { readPackageJSON } from '@vbird/node-utils';
-import type { PluginOption } from 'vite';
 
 /**
  * @description 用于在app内显示loading动画，并根据用户的主题切换loading的颜色

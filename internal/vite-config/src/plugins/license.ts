@@ -1,7 +1,9 @@
-import { dateUtil, readPackageJSON } from '@vbird/node-utils';
-import type { PluginOption } from 'vite';
 import type { OutputBundle, OutputChunk } from 'rollup';
+import type { PluginOption } from 'vite';
+
 import { EOL } from 'node:os';
+
+import { dateUtil, readPackageJSON } from '@vbird/node-utils';
 
 /**
  * @description 注入版权信息插件

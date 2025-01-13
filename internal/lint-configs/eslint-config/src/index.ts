@@ -30,7 +30,6 @@ type FlatConfigPromise = FlatConfig[] | Promise<FlatConfig[]> | TsFlagConfig;
 /**
  *
  * @param config eslint 规则配置
- * @returns
  */
 async function defineConfig(config: FlatConfig[] = []) {
 	const configs: FlatConfigPromise[] = [

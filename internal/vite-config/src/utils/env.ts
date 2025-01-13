@@ -1,8 +1,11 @@
-import { join } from 'node:path';
-import { existsSync } from 'node:fs';
-import { fs } from '@vbird/node-utils';
-import dotenv from 'dotenv';
 import type { ApplicationPluginOptions } from '../types';
+
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+import { fs } from '@vbird/node-utils';
+
+import dotenv from 'dotenv';
 
 const getString = (value: string | undefined, defaultValue: string) => value ?? defaultValue;
 
@@ -67,11 +70,11 @@ async function loadAndConvertEnv(
 	match = 'VITE_',
 	confFiles = getConfFiles()
 ): Promise<
-	{
+	Partial<ApplicationPluginOptions> & {
 		appTitle: string;
 		base: string;
 		port: number;
-	} & Partial<ApplicationPluginOptions>
+	}
 > {
 	const envConfig = await loadEnv(match, confFiles);
 
@@ -91,16 +94,16 @@ async function loadAndConvertEnv(
 	const compressTypes = (VITE_COMPRESS ?? '').split(',').filter((item) => item === 'gzip' || item === 'brotli');
 	return {
 		appTitle: getString(VITE_APP_TITLE, 'Vbird Admin'),
+		archiver: getBoolean(VITE_ARCHIVER),
 		base: getString(VITE_BASE, '/'),
-		port: getNumber(VITE_PORT, 3000),
 		compress: compressTypes.length > 0,
 		compressTypes,
-		archiver: getBoolean(VITE_ARCHIVER),
 		devtools: getBoolean(VITE_DEVTOOLS),
 		injectAppLoading: getBoolean(VITE_INJECT_APP_LOADING),
 		nitroMock: getBoolean(VITE_NITRO_MOCK),
+		port: getNumber(VITE_PORT, 3000),
 		pwa: getBoolean(VITE_PWA),
 		visualizer: getBoolean(VITE_VISUALIZER)
 	};
 }
-export { getConfFiles, loadEnv, loadAndConvertEnv };
+export { getConfFiles, loadAndConvertEnv, loadEnv };

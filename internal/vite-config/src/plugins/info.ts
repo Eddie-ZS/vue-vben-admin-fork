@@ -1,7 +1,13 @@
+import type { Dayjs } from 'dayjs';
 import type { PluginOption } from 'vite';
-import { gradient, boxen, type BoxenOptions, getPackageSize } from '@vbird/node-utils';
-import dayjs, { type Dayjs } from 'dayjs';
+
+import type { BoxenOptions } from '@vbird/node-utils';
+
+import { boxen, getPackageSize, gradient } from '@vbird/node-utils';
+
+import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+
 dayjs.extend(duration);
 
 // @see https://reports.org.cn/plugin-using/gradient-string/summary#accepted-string-input
@@ -9,9 +15,9 @@ const useMessage = gradient(['cyan', 'blue']).multiline(`🚀 Start building the
 
 // boxen style options
 const boxenOptions: BoxenOptions = {
-	padding: 0.5,
 	borderColor: 'blue',
-	borderStyle: 'round'
+	borderStyle: 'round',
+	padding: 0.5
 };
 
 /**
@@ -23,13 +29,6 @@ async function viteBuildInfo(): Promise<PluginOption> {
 	let startTime: Dayjs;
 	let endTime: Dayjs;
 	return {
-		name: 'vite-plugin:build-info',
-		configResolved(resolvedConfig) {
-			// 存储最终解析的配置
-			config = resolvedConfig;
-			// 存储输出文件夹
-			outputDir = resolvedConfig.build.outDir ?? 'dist';
-		},
 		buildStart() {
 			if (config.command === 'build') {
 				console.log(boxen(useMessage, boxenOptions));
@@ -49,12 +48,19 @@ async function viteBuildInfo(): Promise<PluginOption> {
 						),
 						{
 							...boxenOptions,
-							margin: { top: 1, bottom: 1 }
+							margin: { bottom: 1, top: 1 }
 						}
 					)
 				);
 			}
-		}
+		},
+		configResolved(resolvedConfig) {
+			// 存储最终解析的配置
+			config = resolvedConfig;
+			// 存储输出文件夹
+			outputDir = resolvedConfig.build.outDir ?? 'dist';
+		},
+		name: 'vite-plugin:build-info'
 	};
 }
 

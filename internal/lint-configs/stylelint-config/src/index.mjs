@@ -27,9 +27,9 @@ export default {
 			}
 		},
 		{
-			files: ['*.scss', '**/*.scss'],
 			customSyntax: 'postcss-scss',
-			extends: ['stylelint-config-recommended-scss', 'stylelint-config-recommended-vue/scss']
+			extends: ['stylelint-config-recommended-scss', 'stylelint-config-recommended-vue/scss'],
+			files: ['*.scss', '**/*.scss']
 		}
 	],
 	plugins: ['stylelint-order', '@stylistic/stylelint-plugin', 'stylelint-prettier', 'stylelint-scss'],

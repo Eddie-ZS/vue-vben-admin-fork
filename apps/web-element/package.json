@@ -2,18 +2,18 @@
 	"name": "@vbird/web-element",
 	"version": "1.0.0",
 	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"author": "Eddie",
 	"type": "module",
 	"scripts": {
 		"dev": "vite --mode development",
 		"build": "vite build --mode production"
 	},
-	"keywords": [],
-	"author": "Eddie",
-	"license": "ISC",
-	"devDependencies": {
-		"@vbird/vite-config": "workspace:*"
-	},
 	"dependencies": {
 		"vue": "catalog:"
+	},
+	"devDependencies": {
+		"@vbird/vite-config": "workspace:*"
 	}
 }

@@ -1,10 +1,10 @@
+import type { useVbirdForm } from '@vbird-core/form-ui';
+
 import type { SetupVxeTable } from './types';
 
 import { defineComponent, watch } from 'vue';
 
 import { usePreferences } from '@vbird/preferences';
-
-import { type useVbirdForm } from '@vbird-core/form-ui';
 
 import {
 	VxeButton,
@@ -44,7 +44,7 @@ import { extendsDefaultFormatter } from './extends';
 // 是否加载过
 let isInit = false;
 
-// // eslint-disable-next-line import/no-mutable-exports
+// eslint-disable-next-line import/no-mutable-exports
 export let useTableForm: typeof useVbirdForm;
 
 // 部分组件，如果没注册，vxe-table 会报错，这里实际没用组件，只是为了不报错，同时可以减少打包体积

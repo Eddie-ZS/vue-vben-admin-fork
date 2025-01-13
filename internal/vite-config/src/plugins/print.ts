@@ -1,5 +1,7 @@
 import type { PluginOption } from 'vite';
+
 import type { PrintPluginOptions } from '../types';
+
 import { colors } from '@vbird/node-utils';
 
 /**
@@ -9,7 +11,6 @@ import { colors } from '@vbird/node-utils';
 function vitePrintPlugin(options: PrintPluginOptions = {}): PluginOption {
 	const { infoMap = {} } = options;
 	return {
-		name: 'vite-plugin:print',
 		configureServer(server) {
 			// 存储原始的打印输出函数地址
 			const _printUrls = server.printUrls;
@@ -21,7 +22,8 @@ function vitePrintPlugin(options: PrintPluginOptions = {}): PluginOption {
 					console.log(`  ${colors.green('➜')}  ${colors.bold(key)}: ${colors.cyan(value)}`);
 				}
 			};
-		}
+		},
+		name: 'vite-plugin:print'
 	};
 }
 

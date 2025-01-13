@@ -1,5 +1,7 @@
 import { execSync } from 'node:child_process';
+
 import { getPackagesSync } from '@vbird/node-utils';
+
 const { packages } = getPackagesSync();
 
 // scope-enum, 提交信息时的scope选项只能从中选择
@@ -19,6 +21,48 @@ const scopeComplete = execSync('git status --porcelain || true')
 const userConfig = {
 	extends: ['@commitlint/config-conventional'],
 	plugins: ['commitlint-plugin-function-rules'], // 使用函数作为规则值。
+	prompt: {
+		// 用来定义一些常用的git commit message。
+		/** @use czg :b | czg --alias=b | pnpm commit :b */
+		alias: {
+			b: 'build: bump dependencies',
+			c: 'chore: update config',
+			s: 'style: format code'
+		},
+
+		allowCustomIssuePrefix: false, // 是否允许自定义issue前缀
+		allowEmptyIssuePrefix: false, // 是否允许空issue前缀
+		customScopesAlign: scopeComplete ? 'bottom' : 'top',
+		defaultScope: scopeComplete,
+
+		// 中英文 配置模板
+		messages: {
+			body: '填写更加详细的变更描述（可选）。使用 "|" 换行 :\n',
+			breaking: '列举非兼容性重大的变更（可选）。使用 "|" 换行 :\n',
+			confirmCommit: '是否提交或修改commit ?',
+			customFooterPrefix: '输入自定义issue前缀 :',
+			customScope: '请输入自定义的提交范围 :',
+			footer: '列举关联issue (可选) 例如: #31, #I3244 :\n',
+			footerPrefixesSelect: '选择关联issue前缀（可选）:',
+			scope: '选择一个提交范围（可选）:',
+			subject: '填写简短精炼的变更描述 :\n',
+			type: '选择你要提交的类型 :'
+		},
+		types: [
+			{ name: 'feat:     新增功能 | A new feature', value: 'feat' },
+			{ name: 'fix:      修复缺陷 | A bug fix', value: 'fix' },
+			{ name: 'docs:     文档更新 | Documentation only changes', value: 'docs' },
+			{ name: 'style:     代码格式 | Changes that do not affect the meaning of the code', value: 'style' },
+			{ name: 'refactor:     代码重构 | A code change that neither fixes a bug nor adds a feature', value: 'refactor' },
+			{ name: 'perf:     性能提升 | A code change that improves performance', value: 'perf' },
+			{ name: 'test:     测试相关 | Adding missing tests or correcting existing tests', value: 'test' },
+			{ name: 'build:    构建相关 | Changes that affect the build system or external dependencies', value: 'build' },
+			{ name: 'ci:       持续集成 | Changes to our CI configuration files and scripts', value: 'ci' },
+			{ name: 'revert:   回退代码 | Revert to a commit', value: 'revert' },
+			{ name: 'chore:    其他修改 | Other changes that do not modify src or test files', value: 'chore' },
+			{ name: 'type:    类型定义文件修改 | The type definition file is modified', value: 'types' }
+		]
+	},
 	/***
 	 * 规则配置
 	 * 0：禁用规则 1：警告 2：错误
@@ -35,6 +79,21 @@ const userConfig = {
 		 * condition: footer 以空行开始
 		 */
 		'footer-leading-blank': [1, 'always'],
+
+		/**
+		 * condition: 影响范围scope 的枚举，提交信息时只能从中选择
+		 */
+		'function-rules/scope-enum': [
+			2, // level: error
+			'always',
+			(parsed) => {
+				if (!parsed.scope || allowScopedPackages.includes(parsed.scope)) {
+					return [true];
+				}
+
+				return [false, `scope must be one of ${allowScopedPackages.join(', ')}`];
+			}
+		],
 
 		/**
 		 * condition: 标头 header 最大长度
@@ -56,25 +115,10 @@ const userConfig = {
 		 * condition: subject 不能为空
 		 */
 		'subject-empty': [2, 'never'],
-
 		/**
 		 * condition: type 不能为空
 		 */
 		'type-empty': [2, 'never'],
-		/**
-		 * condition: 影响范围scope 的枚举，提交信息时只能从中选择
-		 */
-		'function-rules/scope-enum': [
-			2, // level: error
-			'always',
-			(parsed) => {
-				if (!parsed.scope || allowScopedPackages.includes(parsed.scope)) {
-					return [true];
-				}
-
-				return [false, `scope must be one of ${allowScopedPackages.join(', ')}`];
-			}
-		],
 
 		/**
 		 * 类型枚举，git提交type必须是以下类型
@@ -97,48 +141,6 @@ const userConfig = {
 				'chore', // 对构建过程或辅助工具和库的更改（不影响源文件、测试用例）
 				'types' // 类型定义文件修改
 			]
-		]
-	},
-	prompt: {
-		// 用来定义一些常用的git commit message。
-		/** @use czg :b | czg --alias=b | pnpm commit :b */
-		alias: {
-			b: 'build: bump dependencies',
-			c: 'chore: update config',
-			s: 'style: format code'
-		},
-
-		allowCustomIssuePrefix: false, // 是否允许自定义issue前缀
-		allowEmptyIssuePrefix: false, // 是否允许空issue前缀
-		customScopesAlign: scopeComplete ? 'bottom' : 'top',
-		defaultScope: scopeComplete,
-
-		// 中英文 配置模板
-		messages: {
-			type: '选择你要提交的类型 :',
-			scope: '选择一个提交范围（可选）:',
-			customScope: '请输入自定义的提交范围 :',
-			subject: '填写简短精炼的变更描述 :\n',
-			body: '填写更加详细的变更描述（可选）。使用 "|" 换行 :\n',
-			breaking: '列举非兼容性重大的变更（可选）。使用 "|" 换行 :\n',
-			footerPrefixesSelect: '选择关联issue前缀（可选）:',
-			customFooterPrefix: '输入自定义issue前缀 :',
-			footer: '列举关联issue (可选) 例如: #31, #I3244 :\n',
-			confirmCommit: '是否提交或修改commit ?'
-		},
-		types: [
-			{ value: 'feat', name: 'feat:     新增功能 | A new feature' },
-			{ value: 'fix', name: 'fix:      修复缺陷 | A bug fix' },
-			{ value: 'docs', name: 'docs:     文档更新 | Documentation only changes' },
-			{ value: 'style', name: 'style:     代码格式 | Changes that do not affect the meaning of the code' },
-			{ value: 'refactor', name: 'refactor:     代码重构 | A code change that neither fixes a bug nor adds a feature' },
-			{ value: 'perf', name: 'perf:     性能提升 | A code change that improves performance' },
-			{ value: 'test', name: 'test:     测试相关 | Adding missing tests or correcting existing tests' },
-			{ value: 'build', name: 'build:    构建相关 | Changes that affect the build system or external dependencies' },
-			{ value: 'ci', name: 'ci:       持续集成 | Changes to our CI configuration files and scripts' },
-			{ value: 'revert', name: 'revert:   回退代码 | Revert to a commit' },
-			{ value: 'chore', name: 'chore:    其他修改 | Other changes that do not modify src or test files' },
-			{ value: 'types', name: 'type:    类型定义文件修改 | The type definition file is modified' }
 		]
 	}
 };

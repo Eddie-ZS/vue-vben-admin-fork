@@ -1,13 +1,14 @@
-import { fs, boxen, gradient, cristal, vice } from '@vbird/node-utils';
 import { join } from 'node:path';
+
+import { boxen, cristal, fs, gradient, vice } from '@vbird/node-utils';
 
 const rootDir = process.cwd();
 
 // boxen style options
 const boxenOptions = {
-	padding: 0.5,
 	borderColor: 'blue',
-	borderStyle: 'round'
+	borderStyle: 'round',
+	padding: 0.5
 };
 
 /**

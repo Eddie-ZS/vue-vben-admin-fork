@@ -14,9 +14,9 @@
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"default": "./dist/index.mjs",
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
+			"default": "./dist/index.mjs"
 		}
 	},
 	"dependencies": {
@@ -27,13 +27,13 @@
 	"devDependencies": {
 		"@eslint/js": "catalog:",
 		"eslint": "catalog:",
+		"eslint-config-prettier": "catalog:",
 		"eslint-plugin-eslint-comments": "catalog:",
 		"eslint-plugin-jsdoc": "catalog:",
 		"eslint-plugin-jsonc": "catalog:",
 		"eslint-plugin-n": "catalog:",
 		"eslint-plugin-no-only-tests": "catalog:",
 		"eslint-plugin-perfectionist": "catalog:",
-		"eslint-config-prettier": "catalog:",
 		"eslint-plugin-prettier": "catalog:",
 		"eslint-plugin-regexp": "catalog:",
 		"eslint-plugin-unicorn": "catalog:",
@@ -41,8 +41,8 @@
 		"eslint-plugin-vitest": "catalog:",
 		"eslint-plugin-vue": "catalog:",
 		"globals": "catalog:",
-		"typescript-eslint": "catalog:",
 		"jsonc-eslint-parser": "catalog:",
+		"typescript-eslint": "catalog:",
 		"vue-eslint-parser": "catalog:"
 	}
 }

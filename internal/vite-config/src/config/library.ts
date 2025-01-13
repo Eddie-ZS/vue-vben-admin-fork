@@ -1,7 +1,11 @@
-import { defineConfig, mergeConfig, type UserConfig } from 'vite';
+import type { UserConfig } from 'vite';
+
 import type { DefineLibraryOptions } from '../types';
-import { defineCommonConfig } from './common';
+
+import { defineConfig, mergeConfig } from 'vite';
+
 import { loadLibraryPlugins } from '../plugins';
+import { defineCommonConfig } from './common';
 
 /**
  * @description: Library configuration (库模式 配置)
@@ -11,7 +15,7 @@ function defineLibraryConfig(userConfigPromise?: DefineLibraryOptions) {
 	return defineConfig(async (config) => {
 		const options = (await userConfigPromise?.(config)) || {};
 		// 解构用户配置
-		const { vite = {}, library = {} } = options || {};
+		const { library = {}, vite = {} } = options || {};
 		const { command } = config;
 		const isBuild = command === 'build';
 

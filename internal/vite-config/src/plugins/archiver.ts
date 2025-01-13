@@ -1,9 +1,11 @@
 import type { PluginOption } from 'vite';
+
 import type { ArchiverPluginOptions } from '../types';
 
-import { join } from 'node:path';
-import fsp from 'node:fs/promises';
 import fs from 'node:fs';
+import fsp from 'node:fs/promises';
+import { join } from 'node:path';
+
 import archiver from 'archiver';
 
 /**
@@ -13,7 +15,6 @@ import archiver from 'archiver';
 function viteArchiverPlugin(options: ArchiverPluginOptions = {}): PluginOption {
 	return {
 		apply: 'build',
-		name: 'vite-plugin:archiver',
 		// 在服务器关闭时被调用
 		closeBundle: {
 			async handler() {
@@ -39,7 +40,8 @@ function viteArchiverPlugin(options: ArchiverPluginOptions = {}): PluginOption {
 			},
 			order: 'post'
 		},
-		enforce: 'post'
+		enforce: 'post',
+		name: 'vite-plugin:archiver'
 	};
 }
 

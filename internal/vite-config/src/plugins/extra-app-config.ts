@@ -1,6 +1,8 @@
 import type { PluginOption } from 'vite';
-import { loadEnv } from '../utils/env';
+
 import { colors, generateContentHash, readPackageJSON } from '@vbird/node-utils';
+
+import { loadEnv } from '../utils/env';
 
 const VBIRD_ADMIN_APP_CONFIG = '_VBIRD_ADMIN_APP_CONF_';
 const GLOBAL_CONFIG_FILE_NAME = '_app.config.js';
@@ -44,7 +46,6 @@ async function viteExtraAppConfigPlugin(root: string = process.cwd()): Promise<P
 	const { version = '' } = await readPackageJSON(root);
 
 	return {
-		name: 'vite-plugin:extra-app-config',
 		apply: 'build',
 		async configResolved(resolvedConfig) {
 			publicPath = ensureTrailingSlash(resolvedConfig.base);
@@ -68,6 +69,7 @@ async function viteExtraAppConfigPlugin(root: string = process.cwd()): Promise<P
 				console.log(colors.red(`configuration file failed to package:\n${error}`));
 			}
 		},
+		name: 'vite-plugin:extra-app-config',
 		async transformIndexHtml(html) {
 			// 生成一个hash值，作为文件名后缀，防止浏览器缓存
 			const hash = `v=${version}-${generateContentHash(source, 8)}`;

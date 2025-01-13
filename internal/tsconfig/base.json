@@ -2,25 +2,19 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"display": "Base TsConfig",
 	"compilerOptions": {
-		"baseUrl": ".",
-		"target": "ESNext",
-		"module": "ESNext",
 		// 是否编译构建引用项目, false-禁用构建项目时生成单独的声明文件
 		"composite": false,
+		"target": "ESNext",
+		"baseUrl": ".",
+		"module": "ESNext",
 		// 用于选择模块解析策略
 		"moduleResolution": "Node",
 		// 允许导入json文件
 		"resolveJsonModule": true,
-		// 用来控制是否在编译时进行库文件检查的
-		"skipLibCheck": true,
 		// 启用所有严格类型检查选项
 		"strict": true,
 		// 启用严格的null检查
 		"strictNullChecks": true,
-		// 是否检查未使用的局部变量
-		"noUnusedLocals": true,
-		// 是否检查未使用的参数
-		"noUnusedParameters": true,
 		// 检查switch中是否含有case没有使用break跳出
 		"noFallthroughCasesInSwitch": true,
 		// 允许隐式的any类型
@@ -31,19 +25,25 @@
 		"noImplicitThis": true,
 		// 禁止使用未经检查的索引访问
 		"noUncheckedIndexedAccess": true,
+		// 是否检查未使用的局部变量
+		"noUnusedLocals": true,
+		// 是否检查未使用的参数
+		"noUnusedParameters": true,
 		// 不要触发编译器输出文件，如 JavaScript 源代码、源映射或声明。
 		"noEmit": true,
-		// 用于 隔离（isolated）转译的功能 （具体原因请看 vite - TypeScript 编译器选项）
-		"isolatedModules": true,
-		// 下列两个选项用于执行默认导入
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
+		// 有错误时不进行编译
+		"noEmitOnError": true,
 		// 用来指定编译时是否生成.map文件
 		"sourceMap": false,
+		"allowSyntheticDefaultImports": true,
+		// 下列两个选项用于执行默认导入
+		"esModuleInterop": true,
+		// 用于 隔离（isolated）转译的功能 （具体原因请看 vite - TypeScript 编译器选项）
+		"isolatedModules": true,
+		// 用来控制是否在编译时进行库文件检查的
+		"skipLibCheck": true,
 		// 是否查看 TS 在编译时花费的时间
-		"extendedDiagnostics": false,
-		// 有错误时不进行编译
-		"noEmitOnError": true
+		"extendedDiagnostics": false
 	},
 	"exclude": ["**/node_modules/**", "**/dist/**", "**/.turbo/**"]
 }

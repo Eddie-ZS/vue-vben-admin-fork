@@ -1,5 +1,7 @@
-import { dateUtil, findMonorepoRoot, getPackagesAsync, readPackageJSON } from '@vbird/node-utils';
 import type { PluginOption } from 'vite';
+
+import { dateUtil, findMonorepoRoot, getPackagesAsync, readPackageJSON } from '@vbird/node-utils';
+
 import { readWorkspaceManifest } from '@pnpm/workspace.read-manifest';
 
 /**
@@ -70,8 +72,6 @@ async function viteInjectMetadataPlugin(root = process.cwd()): Promise<PluginOpt
 	const buildTime = dateUtil().format('YYYY-MM-DD HH:mm:ss');
 
 	return {
-		enforce: 'post',
-		name: 'vite-plugin:inject-metadata',
 		// tip: 用户插件在运行这个钩子之前会被解析，因此在 config 钩子中注入其他插件不会有任何效果
 		async config() {
 			// 获取大仓所有包的依赖信息
@@ -99,7 +99,9 @@ async function viteInjectMetadataPlugin(root = process.cwd()): Promise<PluginOpt
 					'import.meta.env.VITE_APP_VERSION': JSON.stringify(version)
 				}
 			};
-		}
+		},
+		enforce: 'post',
+		name: 'vite-plugin:inject-metadata'
 	};
 }
 

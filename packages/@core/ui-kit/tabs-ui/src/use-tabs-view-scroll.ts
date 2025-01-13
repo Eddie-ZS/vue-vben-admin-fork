@@ -1,8 +1,8 @@
+import type { VbirdScrollbar } from '@vbird-core/shadcn-ui';
+
 import type { TabsProps } from './types';
 
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
-
-import { type VbirdScrollbar } from '@vbird-core/shadcn-ui';
 
 import { useDebounceFn } from '@vueuse/core';
 

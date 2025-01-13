@@ -1,6 +1,8 @@
 import type { DefineConfig } from '../types';
-import { join } from 'node:path';
+
 import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { defineApplicationConfig } from './application';
 import { defineLibraryConfig } from './library';
 
@@ -18,10 +20,12 @@ function defineConfig(useConfigPromise?: DefineConfig, type: 'application' | 'au
 	}
 
 	switch (projectType) {
-		case 'application':
+		case 'application': {
 			return defineApplicationConfig(useConfigPromise);
-		case 'library':
+		}
+		case 'library': {
 			return defineLibraryConfig(useConfigPromise);
+		}
 		default: {
 			throw new Error(`Invalid project type: ${projectType}`);
 		}

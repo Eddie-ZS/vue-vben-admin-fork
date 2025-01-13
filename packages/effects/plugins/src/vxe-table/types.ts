@@ -4,11 +4,9 @@ import type { Ref } from 'vue';
 
 import type { ClassType, DeepPartial } from '@vbird/types';
 
-import type { VbirdFormProps } from '@vbird-core/form-ui';
+import type { type useVbirdForm, VbirdFormProps } from '@vbird-core/form-ui';
 
 import type { VxeGridApi } from './api';
-
-import { type useVbirdForm } from '@vbird-core/form-ui';
 
 export interface VxePaginationInfo {
 	currentPage: number;

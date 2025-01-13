@@ -1,23 +1,24 @@
+import type { PluginOption } from 'vite';
+
+import type { ApplicationPluginOptions, CommonPluginOptions, ConditionPlugin, LibraryPluginOptions } from '../types';
+
+import viteVueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import viteVue from '@vitejs/plugin-vue';
 import viteVueJsx from '@vitejs/plugin-vue-jsx';
-import viteVueDevTools from 'vite-plugin-vue-devtools';
 import viteVisualizer from 'rollup-plugin-visualizer';
 import viteCompressPlugin from 'vite-plugin-compression';
 import viteDtsPlugin from 'vite-plugin-dts';
-import viteVueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
-import { VitePWA } from 'vite-plugin-pwa';
 import { createHtmlPlugin as viteHtmlPlugin } from 'vite-plugin-html';
+import { VitePWA } from 'vite-plugin-pwa';
+import viteVueDevTools from 'vite-plugin-vue-devtools';
 
-import type { PluginOption } from 'vite';
-import type { ApplicationPluginOptions, CommonPluginOptions, LibraryPluginOptions, ConditionPlugin } from '../types';
-
-import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteArchiverPlugin } from './archiver';
-import { viteBuildInfo } from './info';
-import { vitePrintPlugin } from './print';
-import { viteLicensePlugin } from './license';
-import { viteInjectMetadataPlugin } from './inject-metadata';
 import { viteExtraAppConfigPlugin } from './extra-app-config';
+import { viteBuildInfo } from './info';
+import { viteInjectAppLoadingPlugin } from './inject-app-loading';
+import { viteInjectMetadataPlugin } from './inject-metadata';
+import { viteLicensePlugin } from './license';
+import { vitePrintPlugin } from './print';
 
 /**
  * @description 获取条件成立的 vite 插件
@@ -38,7 +39,7 @@ async function loadConditionPlugins(conditionPlugins: ConditionPlugin[]): Promis
  * @param {CommonPluginOptions} options 通用插件选项
  */
 async function loadCommonPlugins(options: CommonPluginOptions): Promise<ConditionPlugin[]> {
-	const { isBuild, injectMetadata, visualizer, devtools } = options;
+	const { devtools, injectMetadata, isBuild, visualizer } = options;
 	return [
 		// vue、tsx插件
 		{
@@ -66,7 +67,7 @@ async function loadCommonPlugins(options: CommonPluginOptions): Promise<Conditio
  */
 async function loadApplicationPlugins(options: ApplicationPluginOptions): Promise<PluginOption[]> {
 	// 单独取出，不然会导致 commonOptions 无法读取
-	const { isBuild, env } = options;
+	const { env, isBuild } = options;
 	const {
 		archiver,
 		archiverPluginOptions,
@@ -77,11 +78,11 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 		i18n,
 		importmap,
 		importmapOptions,
+		info,
 		injectAppLoading,
 		license,
 		nitroMock,
 		nitroMockOptions,
-		info,
 		print,
 		printInfoMap,
 		pwa,

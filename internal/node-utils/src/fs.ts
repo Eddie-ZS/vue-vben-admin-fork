@@ -20,7 +20,7 @@ async function outputJson(filePath: string, data: any, ident: number = 2) {
 		// 3. 把数据源转为JSON字符串
 		const JsonData = JSON.stringify(data, null, ident);
 		// 4. 把字符串写入到所建文件中
-		await fs.writeFile(filePath, JsonData, 'utf-8');
+		await fs.writeFile(filePath, JsonData, 'utf8');
 	} catch (error) {
 		console.error('Error writing JSON File:', error);
 		throw error;
