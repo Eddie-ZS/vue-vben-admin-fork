@@ -2,7 +2,6 @@ import { dirname } from 'node:path';
 
 // 从monorepo获取包
 import { getPackages as getPackagesAsyncFunc, getPackagesSync as getPackagesSyncFunc } from '@manypkg/get-packages';
-
 // find-up 通过向上浏览父目录来查找文件或目录
 import { findUpSync } from 'find-up';
 
@@ -45,4 +44,4 @@ async function getPackage(name: string) {
 	return packages.find((pkg) => pkg.packageJson.name === name);
 }
 
-export { findMonorepoRoot, getPackagesSync, getPackagesAsync, getPackage };
+export { findMonorepoRoot, getPackage, getPackagesAsync, getPackagesSync };

@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
+
 // @see https://prettier.nodejs.cn/docs/en/api.html#prettierresolveconfigfileurlorpath--options
-import { format, resolveConfig, getFileInfo } from 'prettier';
+import { format, getFileInfo, resolveConfig } from 'prettier';
 
 /**
  * 编程方式运行 Prettier

@@ -1,6 +1,7 @@
 // @see https://nodejs.cn/api/fs.html
 import { promises as fs } from 'node:fs';
 import { dirname, join } from 'node:path';
+
 import { partial } from 'filesize';
 
 /**
@@ -84,4 +85,4 @@ async function getPackageSize(options: { folder: string; format?: boolean }) {
 	return format ? partial({ standard: 'jedec' })(size) : size;
 }
 
-export { outputJson, ensureFile, readJSON, getPackageSize };
+export { ensureFile, getPackageSize, outputJson, readJSON };

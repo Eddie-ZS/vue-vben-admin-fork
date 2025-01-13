@@ -27,7 +27,8 @@ export async function unicorn(): Promise<Linter.Config[]> {
 				'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }],
 				'unicorn/prefer-global-this': 'off',
 				'unicorn/prefer-top-level-await': 'off',
-				'unicorn/prevent-abbreviations': 'off'
+				'unicorn/prevent-abbreviations': 'off',
+				'unicorn/text-encoding-identifier-case': 'off'
 			}
 		},
 		{

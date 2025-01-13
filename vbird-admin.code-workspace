@@ -21,12 +21,12 @@
 			"path": "internal/lint-configs/stylelint-config"
 		},
 		{
-			"name": "@vbird/tailwind-config",
-			"path": "internal/tailwind-config"
-		},
-		{
 			"name": "@vbird/node-utils",
 			"path": "internal/node-utils"
+		},
+		{
+			"name": "@vbird/tailwind-config",
+			"path": "internal/tailwind-config"
 		},
 		{
 			"name": "@vbird/tsconfig",
@@ -38,51 +38,111 @@
 		},
 		{
 			"name": "@vbird-core/design",
-			"path": "packages/core/design"
+			"path": "packages/@core/base/design"
 		},
 		{
 			"name": "@vbird-core/icons",
-			"path": "packages/core/icons"
+			"path": "packages/@core/base/icons"
 		},
 		{
 			"name": "@vbird-core/shared",
-			"path": "packages/core/shared"
+			"path": "packages/@core/base/shared"
 		},
 		{
 			"name": "@vbird-core/typings",
-			"path": "packages/core/typings"
+			"path": "packages/@core/base/typings"
 		},
 		{
 			"name": "@vbird-core/composables",
-			"path": "packages/core/composables"
+			"path": "packages/@core/composables"
 		},
 		{
 			"name": "@vbird-core/preferences",
-			"path": "packages/core/preferences"
+			"path": "packages/@core/preferences"
 		},
 		{
 			"name": "@vbird-core/form-ui",
-			"path": "packages/core/ui-kit/form-ui"
+			"path": "packages/@core/ui-kit/form-ui"
 		},
 		{
 			"name": "@vbird-core/layout-ui",
-			"path": "packages/core/ui-kit/layout-ui"
+			"path": "packages/@core/ui-kit/layout-ui"
 		},
 		{
 			"name": "@vbird-core/menu-ui",
-			"path": "packages/core/ui-kit/menu-ui"
+			"path": "packages/@core/ui-kit/menu-ui"
 		},
 		{
 			"name": "@vbird-core/popup-ui",
-			"path": "packages/core/ui-kit/popup-ui"
+			"path": "packages/@core/ui-kit/popup-ui"
 		},
 		{
 			"name": "@vbird-core/shadcn-ui",
-			"path": "packages/core/ui-kit/shadcn-ui"
+			"path": "packages/@core/ui-kit/shadcn-ui"
 		},
 		{
 			"name": "@vbird-core/tabs-ui",
-			"path": "packages/core/ui-kit/tabs-ui"
+			"path": "packages/@core/ui-kit/tabs-ui"
+		},
+		{
+			"name": "@vbird/constants",
+			"path": "packages/constants"
+		},
+		{
+			"name": "@vbird/access",
+			"path": "packages/effects/access"
+		},
+		{
+			"name": "@vbird/common-ui",
+			"path": "packages/effects/common-ui"
+		},
+		{
+			"name": "@vbird/hooks",
+			"path": "packages/effects/hooks"
+		},
+		{
+			"name": "@vbird/layouts",
+			"path": "packages/effects/layouts"
+		},
+		{
+			"name": "@vbird/plugins",
+			"path": "packages/effects/plugins"
+		},
+		{
+			"name": "@vbird/request",
+			"path": "packages/effects/request"
+		},
+		{
+			"name": "@vbird/icons",
+			"path": "packages/icons"
+		},
+		{
+			"name": "@vbird/locales",
+			"path": "packages/locales"
+		},
+		{
+			"name": "@vbird/preferences",
+			"path": "packages/preferences"
+		},
+		{
+			"name": "@vbird/stores",
+			"path": "packages/stores"
+		},
+		{
+			"name": "@vbird/styles",
+			"path": "packages/styles"
+		},
+		{
+			"name": "@vbird/types",
+			"path": "packages/types"
+		},
+		{
+			"name": "@vbird/utils",
+			"path": "packages/utils"
+		},
+		{
+			"name": "@vbird/vsh",
+			"path": "scripts/vsh"
 		}
 	]
 }
