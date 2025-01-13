@@ -1,0 +1,60 @@
+{
+	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+	"version": "0.2",
+	// 指定在选择常规词典时要使用的语言区域设置
+	"language": "en,en-US",
+	// 默认为 false; 设置为 true 以默认允许复合词
+	"allowCompoundWords": true,
+	// 永远被认为是正确的单词列表
+	"words": [
+		"antd",
+		"brotli",
+		"clsx",
+		"cristal",
+		"defu",
+		"echarts",
+		"ependencies",
+		"execa",
+		"iconify",
+		"intlify",
+		"jedec",
+		"minh",
+		"minw",
+		"mkdist",
+		"mockjs",
+		"nonwords",
+		"naiveui",
+		"noopener",
+		"noreferrer",
+		"nocheck",
+		"nprogress",
+		"pinia",
+		"qrcode",
+		"shadcn",
+		"sortablejs",
+		"styl",
+		"ui-kit",
+		"uicons",
+		"unplugin",
+		"unref",
+		"vbird",
+		"vite",
+		"vitejs",
+		"vitepress",
+		"vnode",
+		"vueuse"
+	],
+	"ignoreWords": ["ACMR", "vxetable"],
+	// 用于指定要忽略哪些文件的 glob 列表
+	"ignorePaths": [
+		"**/node_modules/**",
+		"**/dist/**",
+		"**/*-dist/**",
+		"**/icons/**",
+		"pnpm-lock.yaml",
+		"**/*.log",
+		"**/*.test.ts",
+		"**/*.spec.ts",
+		"**/__tests__/**"
+	]
+}
