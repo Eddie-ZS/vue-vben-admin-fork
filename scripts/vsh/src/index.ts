@@ -5,6 +5,7 @@ import cac from 'cac';
 import { defineCheckCircularCommand } from './check-circular';
 import { defineDepcheckCommand } from './check-dep';
 import { defineCodeWorkSpaceCommand } from './code-workspace';
+import { defineDepVersionCommand } from './dep-version';
 import { defineLintCommand } from './lint';
 
 try {
@@ -24,6 +25,9 @@ try {
 
 	// vsh lint
 	defineLintCommand(vsh);
+
+	// vsh dep-version
+	defineDepVersionCommand(vsh);
 
 	// 事件: 监听命令
 	vsh.on('command:*', () => {

@@ -1,6 +1,6 @@
 import type { CAC } from 'cac';
 
-import { getPackagesAsync } from '@vbird/node-utils';
+import { consola, getPackagesAsync } from '@vbird/node-utils';
 
 import depcheck from 'depcheck';
 
@@ -67,7 +67,7 @@ async function runDepcheck() {
 			}
 
 			// 输出·未使用的依赖、未安装的依赖信息
-			console.error(
+			consola.error(
 				'\n',
 				pkg.packageJson.name,
 				'\n missing:',
