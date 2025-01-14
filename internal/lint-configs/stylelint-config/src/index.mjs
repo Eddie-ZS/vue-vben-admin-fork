@@ -34,6 +34,8 @@ export default {
 	],
 	plugins: ['stylelint-order', '@stylistic/stylelint-plugin', 'stylelint-prettier', 'stylelint-scss'],
 	rules: {
+		// 禁止使用已弃用的 at 规则
+		'at-rule-no-deprecated': null,
 		// 禁用未知 at 规则
 		'at-rule-no-unknown': [
 			true,
