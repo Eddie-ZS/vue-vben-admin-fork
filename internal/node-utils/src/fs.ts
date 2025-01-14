@@ -61,8 +61,8 @@ async function readJSON(filePath: string) {
 
 /**
  * 获取打包后的文件大小
- * @param options.folder 打包输出目录
- * @param options.format 是否格式化输出
+ * - folder  打包输出目录
+ * - format  是否格式化输出
  */
 async function getPackageSize(options: { folder: string; format?: boolean }) {
 	const { folder = 'dist', format = true } = options || {};
