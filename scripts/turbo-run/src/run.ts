@@ -1,6 +1,6 @@
 import { consola, execaCommand, getPackagesAsync } from '@vbird/node-utils';
 
-import { isCancel, select } from '@clack/prompts';
+import { cancel, isCancel, select } from '@clack/prompts';
 
 interface RunOptions {
 	command?: string;
@@ -31,7 +31,7 @@ export async function run({ command }: RunOptions) {
 		});
 		// 按 ctrl+c 正常退出
 		if (isCancel(selectAppName) || !selectAppName) {
-			consola.info('Process exit!');
+			cancel('Process exit!');
 			process.exit(0);
 		}
 	} else {
