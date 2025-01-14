@@ -12,7 +12,7 @@ interface Props extends TabsProps {}
 
 defineOptions({
 	name: 'VbirdTabsChrome',
-	// // eslint-disable-next-line perfectionist/sort-objects
+	// eslint-disable-next-line perfectionist/sort-objects
 	inheritAttrs: false
 });
 
