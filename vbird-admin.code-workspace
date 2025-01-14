@@ -141,6 +141,10 @@
 			"path": "packages/utils"
 		},
 		{
+			"name": "@vbird/turbo-run",
+			"path": "scripts/turbo-run"
+		},
+		{
 			"name": "@vbird/vsh",
 			"path": "scripts/vsh"
 		}

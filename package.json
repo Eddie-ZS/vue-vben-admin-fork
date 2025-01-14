@@ -19,7 +19,8 @@
 		"check:dep": "vsh check-dep",
 		"clean": "node ./scripts/clean.mjs",
 		"commit": "czg",
-		"dev": "turbo run dev",
+		"dev": "turbo-run dev",
+		"dev:all": "turbo run dev",
 		"dev:ele": "pnpm -F @vbird/web-element run dev",
 		"format": "vsh lint --format",
 		"format:eslint": "eslint . --cache --fix",
@@ -30,7 +31,7 @@
 		"lint:prettier": "prettier . --check --cache  --ignore-unknown",
 		"lint:stylelint": "stylelint **/*.{vue,css,less,scss} --cache",
 		"prepare": "husky",
-		"postinstall": "turbo run stub",
+		"postinstall": "turbo run stub || pnpm -r run stub --if-present",
 		"reinstall": "pnpm clean --del-lock && pnpm install"
 	},
 	"devDependencies": {
@@ -44,6 +45,7 @@
 		"@vbird/stylelint-config": "workspace:*",
 		"@vbird/tailwind-config": "workspace:*",
 		"@vbird/tsconfig": "workspace:*",
+		"@vbird/turbo-run": "workspace:*",
 		"@vbird/vite-config": "workspace:*",
 		"@vbird/vsh": "workspace:*",
 		"@vitejs/plugin-vue": "catalog:",
