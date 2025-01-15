@@ -6,6 +6,7 @@ import { defineConfig, loadEnv, mergeConfig } from 'vite';
 
 import { loadApplicationPlugins } from '../plugins';
 import { loadAndConvertEnv } from '../utils/env';
+import { createCssOptions } from '../utils/scss';
 import { defineCommonConfig } from './common';
 
 /**
@@ -73,6 +74,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 				},
 				target: 'es2015'
 			},
+			css: createCssOptions(injectGlobalScss),
 			plugins,
 			server: {
 				host: true,
