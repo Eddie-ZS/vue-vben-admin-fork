@@ -11,6 +11,7 @@
 		"build": "vite build --mode production"
 	},
 	"dependencies": {
+		"@vbird-core/design": "workspace:*",
 		"vue": "catalog:"
 	},
 	"devDependencies": {

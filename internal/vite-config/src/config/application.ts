@@ -1,14 +1,17 @@
-import type { UserConfig } from 'vite';
+import type { CSSOptions, UserConfig } from 'vite';
 
 import type { DefineApplicationOptions } from '../types';
 
+import path, { relative } from 'node:path';
+
+import { findMonorepoRoot } from '@vbird/node-utils';
+
+import { NodePackageImporter } from 'sass';
 import { defineConfig, loadEnv, mergeConfig } from 'vite';
 
 import { loadApplicationPlugins } from '../plugins';
 import { loadAndConvertEnv } from '../utils/env';
-import { createCssOptions } from '../utils/scss';
 import { defineCommonConfig } from './common';
-
 /**
  * @description: Application configuration (应用模式 配置)
  * @param {DefineApplicationOptions} userConfigPromise 用户配置函数
@@ -91,6 +94,35 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
 		// 合并用户自定义配置
 		return mergeConfig(mergeCommonConfig, vite);
 	});
+}
+
+/**
+ * @param injectGlobalScss 是否注入全局scss
+ */
+function createCssOptions(injectGlobalScss: boolean): CSSOptions {
+	const root = findMonorepoRoot();
+	return {
+		preprocessorOptions: injectGlobalScss
+			? {
+					scss: {
+						additionalData: (source, filename) => {
+							const relativePath = relative(root, filename);
+							console.log('source:', source);
+							console.log('filename:', filename, path);
+							console.log('relativePath:', relativePath);
+							if (relativePath.startsWith(`apps${path.sep}`)) {
+								return `@use "@vbird/styles/global" as *;\n${source}`;
+							}
+							return source;
+						},
+						api: 'modern',
+						// @sse https://sass-lang.com/documentation/js-api/classes/nodepackageimporter/
+						//内置的 Node.js 包导入器。这将根据标准 Node.js resolutionalgorithm 从 node_modules 加载 @use "pkg:URL"
+						importers: [new NodePackageImporter()]
+					}
+				}
+			: {}
+	};
 }
 
 export { defineApplicationConfig };

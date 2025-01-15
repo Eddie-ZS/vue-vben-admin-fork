@@ -545,6 +545,19 @@ importers:
 
   apps/web-element:
     dependencies:
+      '@vbird-core/design':
+        specifier: workspace:*
+        version: link:../../packages/@core/base/design
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.7.3)
+    devDependencies:
+      '@vbird/vite-config':
+        specifier: workspace:*
+        version: link:../../internal/vite-config
+
+  apps/web-naive:
+    dependencies:
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
