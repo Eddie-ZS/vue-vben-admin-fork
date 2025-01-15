@@ -5,6 +5,10 @@
 			"path": "apps/web-element"
 		},
 		{
+			"name": "@vbird/web-naive",
+			"path": "apps/web-naive"
+		},
+		{
 			"name": "@vbird/commitlint-config",
 			"path": "internal/lint-configs/commitlint-config"
 		},
