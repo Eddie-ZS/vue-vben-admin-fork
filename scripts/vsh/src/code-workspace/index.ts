@@ -41,7 +41,7 @@ async function createCodeWorkSpace({ autoCommit = false, indent = 2 }: CodeWorkS
 	// 使用 prettier 格式化 .code-workspace 文件
 	await prettierFormat(outputPath);
 	if (autoCommit) {
-		// 提交 .code-workspace 文件到仓库
+		// 添加 .code-workspace 文件到暂存区
 		await gitAdd(CODE_WORKSPACE_FILE_NAME, monorepoRoot);
 	}
 }
