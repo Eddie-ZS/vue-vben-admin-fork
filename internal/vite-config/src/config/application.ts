@@ -105,11 +105,12 @@ function createCssOptions(injectGlobalScss: boolean): CSSOptions {
 		preprocessorOptions: injectGlobalScss
 			? {
 					scss: {
+						// source 为 组件样式中的 样式内容，filename 为 组件样式文件路径
 						additionalData: (source, filename) => {
+							// 获取样式组件的相对路径
+							// filename: E:/study/vbird-admin/vue-vbird-admin-fork/apps/web-element/src/App.vue
+							// relativePath: apps/web-element/src/App.vue
 							const relativePath = relative(root, filename);
-							console.log('source:', source);
-							console.log('filename:', filename, path);
-							console.log('relativePath:', relativePath);
 							if (relativePath.startsWith(`apps${path.sep}`)) {
 								return `@use "@vbird/styles/global" as *;\n${source}`;
 							}

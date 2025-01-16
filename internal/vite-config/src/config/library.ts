@@ -2,6 +2,8 @@ import type { UserConfig } from 'vite';
 
 import type { DefineLibraryOptions } from '../types';
 
+import { readPackageJSON } from '@vbird/node-utils';
+
 import { defineConfig, mergeConfig } from 'vite';
 
 import { loadLibraryPlugins } from '../plugins';
@@ -17,15 +19,32 @@ function defineLibraryConfig(userConfigPromise?: DefineLibraryOptions) {
 		// 解构用户配置
 		const { library = {}, vite = {} } = options || {};
 		const { command } = config;
+		const root = process.cwd();
 		const isBuild = command === 'build';
 
 		const plugins = await loadLibraryPlugins({
 			dts: true,
+			injectMetadata: true,
 			isBuild,
 			...library
 		});
 
+		const { dependencies = {}, peerDependencies = {} } = await readPackageJSON(root);
+		const externalPackages = [...Object.keys(dependencies), ...Object.keys(peerDependencies)];
+
 		const libraryConfig: UserConfig = {
+			build: {
+				lib: {
+					entry: 'src/index.ts',
+					fileName: () => 'index.mjs',
+					formats: ['es']
+				},
+				rollupOptions: {
+					external: (id) => {
+						return externalPackages.some((pkg) => id === pkg || id.startsWith(`${pkg}/`));
+					}
+				}
+			},
 			plugins
 		};
 

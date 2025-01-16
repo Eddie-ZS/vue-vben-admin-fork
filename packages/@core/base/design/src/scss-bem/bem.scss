@@ -1,5 +1,22 @@
 @forward './constants';
 
+/**
+  element-plus：el-button、el-button--primary
+  t-design：t-button t-button--theme-primary
+  1. 有一个独立的命名空间，如 el 、 t
+  2. 有一个组件名称，如 button
+  3. 有一个组件特性标识，如 primary
+
+  BEM 的命名规范：
+  B：块（block）。逻辑、功能独立的组件，就如上述的 button 组件。
+  E：元素（element）。块（block）的组成部分。比如有文案 text 元素，其就可作为 button 的元素。
+  M：修改器（modifier）。顾名思义修改器，就是对 block 、 element 中的样式进行修改的。比如 button 组件的不同状态：danger、primary、warning 就可以为其分配不同的修改器。
+
+  连接符规范：
+  1. 命名连接符用 - 连接。如：el-table、el-table-column
+  2. 块与元素用 __ 连接。如：el-table__header
+  3. 块与修改器用 -- 连接。如：el-button--primary、el-button--danger
+*/
 @mixin b($block) {
 	$B: $namespace + '-' + $block !global;
 
