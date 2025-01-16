@@ -10,6 +10,9 @@
 		"build": "vite build --mode production",
 		"dev": "vite --mode development"
 	},
+	"imports": {
+		"#/*": "./src/*"
+	},
 	"dependencies": {
 		"@vbird/access": "workspace:*",
 		"@vbird/common-ui": "workspace:*",
