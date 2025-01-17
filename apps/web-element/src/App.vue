@@ -13,6 +13,11 @@ onMounted(() => {});
 		123
 		<div :class="[e('item')]">456</div>
 	</div>
+
+	<div class="menu">
+		999
+		<div class="menuitem">125</div>
+	</div>
 </template>
 
 <style lang="scss" scoped>
@@ -20,7 +25,7 @@ onMounted(() => {});
 	color: red;
 
 	@include e('item') {
-		color: orange;
+		color: blue;
 	}
 }
 </style>

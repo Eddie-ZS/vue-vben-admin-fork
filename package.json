@@ -40,7 +40,6 @@
 		"@types/node": "catalog:",
 		"@vbird/commitlint-config": "workspace:*",
 		"@vbird/eslint-config": "workspace:*",
-		"@vbird/node-utils": "workspace:*",
 		"@vbird/prettier-config": "workspace:*",
 		"@vbird/stylelint-config": "workspace:*",
 		"@vbird/tailwind-config": "workspace:*",
