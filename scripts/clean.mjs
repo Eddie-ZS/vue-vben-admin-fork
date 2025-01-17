@@ -1,15 +1,7 @@
+import { promises as fs } from 'node:fs';
 import { join } from 'node:path';
 
-import { boxen, cristal, fs, gradient, vice } from '@vbird/node-utils';
-
 const rootDir = process.cwd();
-
-// boxen style options
-const boxenOptions = {
-	borderColor: 'blue',
-	borderStyle: 'round',
-	padding: 0.5
-};
 
 /**
  * @description 递归删除指定目录下的文件或目录
@@ -27,7 +19,7 @@ async function cleanTargetsRecursively(currentDir, targets) {
 			// 如果当前文件或目录是需要删除的目标，则删除
 			if (targets.includes(file)) {
 				await fs.rm(filePath, { force: true, recursive: true });
-				console.log(cristal(`Delete file or directory: ${filePath}`));
+				console.log(`Delete file or directory: ${filePath}`);
 			}
 			// 如果当前文件或目录是目录，则递归调用本函数
 			const stat = await fs.lstat(filePath);
@@ -50,11 +42,11 @@ async function cleanTargetsRecursively(currentDir, targets) {
 		cleanTargets.push('pnpm-lock.yaml');
 	}
 
-	console.log(boxen(vice(`Start cleaning the targets: ${cleanTargets.join(', ')} from root: ${rootDir}`), boxenOptions));
+	console.log(`Start cleaning the targets: ${cleanTargets.join(', ')} from root: ${rootDir}`);
 
 	try {
 		await cleanTargetsRecursively(rootDir, cleanTargets);
-		console.log(boxen(gradient(['pink', 'blue'])(`Cleanup completed!`, boxenOptions)));
+		console.log(`Cleanup completed!`);
 	} catch (error) {
 		console.error(`Unexpected error during cleanup: ${error.message}`);
 	}
